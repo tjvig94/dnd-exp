@@ -14,12 +14,39 @@ Race.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        abilityBonus: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        speed: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        languages: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        trait1: {
+            type: DataTypes.STRING
+        },
+        trait2: {
+            type: DataTypes.STRING
+        },
+        trait3: {
+            type: DataTypes.STRING
+        },
+        trait4: {
+            type: DataTypes.STRING
+        },
+        trait5: {
+            type: DataTypes.STRING
         }
     },
     {
         sequelize,
         timestamps: false,
-        freezeTbleName: true,
+        freezeTableName: true,
         underscored: true,
         modelName: 'race'
     }
