@@ -15,14 +15,14 @@ Character.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        race: {
+        race_id: {
             type: DataTypes.STRING,
             allowNull: false,
             references: { model: 'race', key: 'id' }
 
         },
 
-        class: {
+        class_id: {
             type: DataTypes.STRING,
             allowNull: false,
             references: { model: 'class', key: 'id' }
