@@ -16,14 +16,14 @@ Character.init(
             allowNull: false,
         },
         race_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: { model: 'race', key: 'id' }
 
         },
 
         class_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: { model: 'class', key: 'id' }
 
@@ -71,10 +71,6 @@ Character.init(
             type: DataTypes.STRING
         },
 
-        languages: {
-            type: DataTypes.STRING
-        },
-
         proficiencies: {
             type: DataTypes.TEXT
         },
@@ -85,10 +81,7 @@ Character.init(
 
         traits: {
             type: DataTypes.TEXT
-        }
-
-
-
+        },
     },
 
     {
