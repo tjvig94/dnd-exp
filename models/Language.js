@@ -1,9 +1,9 @@
+const sequelize = require('../config/connection.js');
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
 
-class Class extends Model {}
+class Language extends Model { }
 
-Class.init(
+Language.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,19 +11,20 @@ Class.init(
             primaryKey: true,
             autoIncrement: true
         },
-        
-        name: {
+        language: {
             type: DataTypes.STRING,
-            allowNull: false
-        }
+            allowNull: false,
+        },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'class'
+        modelName: 'language'
     }
 );
 
-module.exports = Class;
+module.exports = Language;
+
+// origin for icing?

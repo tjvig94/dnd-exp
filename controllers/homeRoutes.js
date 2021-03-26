@@ -1,8 +1,13 @@
 const router = require('express').Router();
-const path = require('path');
+const { User, Character } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+router.get('/', async (req, res) => {
+    try {
+        
+    } catch (err) {
+        res.status(500).json(err)
+    }
 })
 
 module.exports = router;
