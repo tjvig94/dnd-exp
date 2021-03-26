@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const { Character }  = require('../../models');
+const { Character } = require('../../models');
 const axios = require('axios').default;
 const CharacterObj = require('../../lib/Character');
 const dndApi = 'https://www.dnd5eapi.co/api'
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     const classData = await axios.get(`${dndApi}/classes/${req.body.charClass}`);
     let newCharacter = new CharacterObj(req.body.charName, req.body.charClass, req.body.charRace);
     res.json(newCharacter);
-    
+
 
     //     promise info 
     //     taker info and input into char class
@@ -20,12 +20,12 @@ router.post('/', async (req, res) => {
     //     post to db
 })
 
-const { Character, User } = require('../../models');
+// const { Character, User } = require('../../models');
 const { Router } = require('express');
 
 // Get all characters that belong to user 
 
-router.get('/',  async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const characterData = await Character.findAll({
             attributes: ['id', 'name'],
