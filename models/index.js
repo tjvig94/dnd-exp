@@ -102,4 +102,5 @@ module.exports = {
     Language,
     Attacks,
     Feature,
+    Armor
 }
