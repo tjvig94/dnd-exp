@@ -23,13 +23,17 @@ CREATE DATABASE dnd_db;
 
 -- CREATE TABLE other (
 -- 	id INT AUTO_INCREMENT PRIMARY KEY,
--- 	languages VARCHAR,
--- 	proficiencies TEXT,
+
 -- 	equipment TEXT,
--- 	features TEXT, 
+
 -- 	character_id INT
 -- );
 
+-- 	languages VARCHAR(50),
+
+-- 	proficiencies TEXT,
+
+--     features TEXT, 
 
 -- CREATE TABLE character_stats (
 -- 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -53,7 +57,7 @@ CREATE DATABASE dnd_db;
 -- 	Cha_sav INT, 
 -- 	Prof_bonus INT,
 -- 	character_id INT
--- 	)
+-- 	);
 
 -- CREATE TABLE skills (
 -- 	id INT AUTO_INCREMENT PRIMARY KEY,
