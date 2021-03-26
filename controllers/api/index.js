@@ -3,6 +3,6 @@ const userRoutes = require('./userRoutes');
 const characterRoutes = require('./characterRoutes');
 
 router.use('/users', userRoutes);
-router.use('/projects', characterRoutes);
+router.use('/characterGenerator', characterRoutes);
 
 module.exports = router;
