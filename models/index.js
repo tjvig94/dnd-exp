@@ -9,9 +9,9 @@ const SkillSet = require('./SkillSet');
 const Attacks = require('./Attacks');
 const Feature = require('./Feature');
 const Armor = require('./Armor');
-//need to figure out how and what relates to eachother (hasmany etc...)
 
-//Need to rework 
+
+
 
 User.hasMany(Character, {
     foreignKey: 'user_id',

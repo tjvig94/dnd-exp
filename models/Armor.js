@@ -21,17 +21,17 @@ Armor.init(
             type: DataTypes.INTEGER
         },
 
-        // },
+        
         // speed: {
-        //     INT,
-
+        //    type: DataTypes.INTEGER,
+        
         // },
         // hp_max: {
-        //     INT,
+        //     type: DataTypes.INTEGER
 
         // },
         // hit_dice: {
-        //     INT,
+        //     type: DataTypes.INTEGER
 
         // },
 
