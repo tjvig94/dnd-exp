@@ -35,12 +35,12 @@ User.hasMany(Character, {
 Other.belongsTo(Character, {
     foreignKey: 'character_id',
 });
-Character.belongsToMany(Language, {
-    onDelete: 'cascade'
-});
-Language.belongsToMany(Character, {
-    onDelete: 'cascade'
-});
+// Character.belongsToMany(Language, {
+//     onDelete: 'cascade'
+// });
+// Language.belongsToMany(Character, {
+//     onDelete: 'cascade'
+// });
 
 
 
