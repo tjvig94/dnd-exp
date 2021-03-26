@@ -6,7 +6,8 @@ const Other = require('./Other')
 const Language = require('./Language')
 const StatSet = require('./StatSet')
 const SkillSet = require('./SkillSet')
-const Attacks = require('./Attacks')
+const Attacks = require('./Attacks');
+const Feature = require('./Feature');
 //need to figure out how and what relates to eachother (hasmany etc...)
 
 //Need to rework 
@@ -36,7 +37,7 @@ Language.belongsToMany(Character, {
 });
 
 StatSet.belongsTo(Character, {
-foreignKey: 'character_id'
+    foreignKey: 'character_id'
 });
 
 Character.hasOne(StatSet, {
@@ -59,6 +60,14 @@ Class.hasMany(Character, {
     onDelete: 'RESTRICT'
 });
 Character.hasOne(SkillSet, {
+    onDelete: 'CASCADE'
+});
+Character.belongsToMany(Feature, {
+    through: 'FeatureCharacter',
+    onDelete: 'CASCADE'
+});
+Feature.belongsToMany(Character, {
+    through: 'FeatureCharacter',
     onDelete: 'CASCADE'
 });
 
