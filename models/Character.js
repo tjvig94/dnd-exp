@@ -35,9 +35,6 @@ Character.init(
 
         },
 
-        stats: {
-            type: DataTypes.INTEGER
-        },
 
         modifiers: {
             type: DataTypes.INTEGER
