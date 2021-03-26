@@ -72,6 +72,10 @@ Feature.belongsToMany(Character, {
     onDelete: 'CASCADE'
 });
 
+Character.hasMany(Attacks, {
+    onDelete: 'RESTRICT'
+});
+
 Character.belongsToMany(Armor, {
     through: 'ArmorCharacter',
     onDelete: 'CASCADE'
