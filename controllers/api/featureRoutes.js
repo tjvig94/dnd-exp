@@ -46,7 +46,7 @@ router.put('/:id', async (req, res) => {
             res.json(feature)
             return Feature.findAll({ where: { feature: req.params.id } })
         })
-        .then((Feature) => {
+        .then((feature) => {
             const featureCharacterIds = featureCharacter.map(({ character_id }) => character_id);
             const newFeature = req.body.featureIds
                 .filter((feature_id) => !featureCharacterIds.includes(feature_id))
@@ -60,7 +60,7 @@ router.put('/:id', async (req, res) => {
                 .filter(({ feature_id }) => !req.body.featureIds.includes(feature_id))
                 .map(({ id }) => id);
             return Promise.all([
-                featureCharacter.destroy({ where: { id: productTagsToRemove } }),
+                featureCharacter.destroy({ where: { id: featureCharacterToRemove } }),
                 featureCharacter.bulkCreate(newFeature),
             ]);
         })
@@ -69,5 +69,19 @@ router.put('/:id', async (req, res) => {
             // console.log(err);
             res.status(400).json(err);
         })
-})
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const destroyFeature = await Feature.destroy(
+            {
+                where: {
+                    id: req.params.id
+                }
+            }).then(destroyFeature => (destroyFeature) ? res.status(200).json : res.status(404).json
+                ({ message: "Cant find what to destroy try again" }));
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 module.exports = router;

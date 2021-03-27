@@ -12,4 +12,5 @@ router.use('/class', classRoutes);
 router.use('/race', raceRoutes);
 router.use('/user', userRoutes);
 router.use('/feature', featureRoutes);
+
 module.exports = router;
