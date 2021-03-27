@@ -13,7 +13,6 @@ const getCategory = (response) => {
     });
     return array;
 }
-
 const getEquipment = (response) => {
     let equipmentArray = [];
     let equipmentOptions = response;
@@ -61,7 +60,7 @@ router.post('/', async (req, res) => {
 
 // Get all characters that belong to user 
 
-router.get('/',  async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const characterData = await Character.findAll({
             attributes: ['id', 'name'],
