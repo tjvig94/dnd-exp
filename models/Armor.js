@@ -19,21 +19,20 @@ Armor.init(
         },
         initiative: {
             type: DataTypes.INTEGER
+
         },
+        speed: {
+            type: DataTypes.INTEGER,
 
-        
-        // speed: {
-        //    type: DataTypes.INTEGER,
-        
-        // },
-        // hp_max: {
-        //     type: DataTypes.INTEGER
+        },
+        hp_max: {
+            type: DataTypes.INTEGER
 
-        // },
-        // hit_dice: {
-        //     type: DataTypes.INTEGER
+        },
+        hit_dice: {
+            type: DataTypes.INTEGER
 
-        // },
+        },
 
 
 
