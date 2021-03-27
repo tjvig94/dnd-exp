@@ -28,6 +28,7 @@ Character.hasOne(Other, {
 Other.belongsTo(Character, {
     foreignKey: 'character_id',
 });
+
 Character.belongsToMany(Language, {
     through: 'LanguageCharacter',
     onDelete: 'CASCADE'

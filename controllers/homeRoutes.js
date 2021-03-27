@@ -3,9 +3,11 @@ const { User, Character } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-    try{
-
-    }catch (err) {
+    try {
+        
+    } catch (err) {
         res.status(500).json(err)
     }
 })
+
+module.exports = router;
