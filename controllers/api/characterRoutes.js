@@ -5,15 +5,51 @@ const axios = require('axios').default;
 const CharacterObj = require('../../lib/Character');
 const dndApi = 'https://www.dnd5eapi.co/api'
 
-let classData;
+const getCategory = (response) => {
+    let array = [];
+    let category = response;
+    category.forEach(item => {
+        array.push(item.name);
+    });
+    return array;
+}
+
+const getEquipment = (response) => {
+    let equipmentArray = [];
+    let equipmentOptions = response;
+    equipmentOptions.forEach(option => {
+        equipmentArray.push(option.equipment.name);
+    });
+    return equipmentArray;
+}
+
+const chooseEquipment = (response) => {
+    let equipmentArray = [];
+    let allOptions = response;
+    allOptions.forEach(choice => {
+        let choiceNumber = choice.choose;
+        for (i = 0; i < choiceNumber; i++) {
+            let options = choice.from;
+            equipmentArray.push(options[i].equipment.name);
+        }   
+    });
+    return equipmentArray;
+}
+
 router.post('/', async (req, res) => {  
     try {
-        classData = await axios.get(`${dndApi}/classes/${req.body.charClass}`);
-        console.log(classData);
-        // let billiam = new CharacterObj(req.body.charName, req.body.charRace, req.body.charClass);
-        res.status(200).json(classData.data);
+        let classData = await axios.get(`${dndApi}/classes/${req.body.charClass}`);
+        let hitDie = classData.data.hit_die;
+        let proficiencies = getCategory(classData.data.proficiencies);
+        let savingThrows = getCategory(classData.data.saving_throws);
+        let startingEquipment = getEquipment(classData.data.starting_equipment);
+        let moreEquipment = chooseEquipment(classData.data.starting_equipment_options);
+        const newCharacter = new CharacterObj(req.body.charName, req.body.charClass, req.body.charRace, hitDie, proficiencies, savingThrows, startingEquipment, moreEquipment)
+       
+        res.status(200).json(newCharacter);
     } catch (err) { 
-        res.status(500).json(err)
+        res.status(500).json(err);
+        console.log(err);
     }   
 
     //     promise info 
