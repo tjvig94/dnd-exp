@@ -54,6 +54,24 @@ SkillSet.init(
         Persuasion: {
             type: DataTypes.INTEGER
         },
+        Religion: {
+            type: DataTypes.INTEGER
+        },
+        Sleight_of_hand: {
+            type: DataTypes.INTEGER
+        },
+        Stealth: {
+            type: DataTypes.INTEGER
+        },
+        Survival: {
+            type: DataTypes.INTEGER
+        },
+        Passive_Wisdom: {
+            type: DataTypes.INTEGER
+        },
+        character_id: {
+            type: DataTypes.INTEGER
+        },
 
     },
     {
