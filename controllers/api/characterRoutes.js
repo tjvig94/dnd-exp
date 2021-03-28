@@ -53,39 +53,13 @@ router.post('/', async (req, res) => {
             req.body.charClass, 
             req.body.charRace, 
             req.body.charName
-            ).character; 
-
-        // data from class
-        // let hitDie = classData.hit_die;       
-        // let savingThrows = getCategory(classData.saving_throws);
-
-        // let startingEquipment = getEquipment(classData.starting_equipment);
-        // let moreEquipment = chooseEquipment(classData.starting_equipment_options);
-        // let equipment = startingEquipment.concat(moreEquipment);
-
-        // data from race
-        // let speed = raceData.speed;
-
-        // let classProficiencies = getCategory(classData.proficiencies);
-        // let raceProficiencies = getCategory(raceData.starting_proficiencies);
-        // let moreProficiencies = (raceData.starting_proficiency_options) ? chooseProfOrLang(raceData.starting_proficiency_options) : null;
-        // let proficiencies = raceProficiencies.concat(moreProficiencies).concat(classProficiencies);
-
-        // let someLanguages = getCategory(raceData.languages);
-        // let moreLanguages = (raceData.language_options) ? chooseProfOrLang(raceData.language_options) : "";
-        // let languages = someLanguages.concat(moreLanguages);
-
-        // let features = getCategory(raceData.traits);     
+            ).character;    
 
         res.status(200).json(newChar);
     } catch (err) { 
         res.status(500).json(err);
         console.log(err);
-    }   
-
-    //     promise info 
-    //     taker info and input into char class
-    //     new Character(datas.hitdie)
+    } 
     //     post to db
 
 })
