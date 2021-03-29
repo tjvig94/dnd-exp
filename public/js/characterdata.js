@@ -7,12 +7,16 @@ $(document).ready(function(){
 
         let userData = {
             charName: $('.char_name').val(),
-            charClass: $('.char_class').val().toLowerCase(),
-            charRace: $('.char_race').val().toLowerCase(),
+            charClass: $('.char_class').val(),
+            charRace: $('.char_race').val()
         }
 
-        $.post('/api/characterGenerator', userData).then(response => {
-            console.log(response);
-        })
+        if (!userData.charName || userData.charClass == "Class" || userData.charRace == "Race") {
+            console.log("All fields must be entered");
+        } else {
+            $.post('/api/characterGenerator', userData).then(response => {
+                console.log(response);
+            })
+        }        
     });
 });
