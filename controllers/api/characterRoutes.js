@@ -31,13 +31,13 @@ router.post('/', async (req, res) => {
             modifiers: newChar.modifiers,
             skills: newChar.skills,
             speed: newChar.speed,
-            hitdice: newChar.hitdice,
+            hitdice: newChar.hit_die,
             equipment: newChar.equipment,
             proficiencies: newChar.proficiencies,
             features: newChar.features,
             languages: newChar.languages
         })
-        .then(character => res.status(200).json(character));
+        .then((character) => res.status(200).json(character));
 
     } catch (err) { 
         res.status(500).json(err);
@@ -53,8 +53,10 @@ router.get('/:id', async (req, res) => {
             attributes: ['id', 'name', 'stats', 'modifiers', 'skills', 'armourclass', 'initiative', 'speed', 'hitpoints', 'hitdice', 'equipment', 'proficiencies', 'languages', 'features', 'race', 'class'],
             include: [{ model: User }]
         })
-        res.status(200).json(characterData);
 
+        // TODO: Send user to character-sheet page filled with this character's data
+
+        res.status(200).json(characterData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -68,6 +70,9 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })
+
+        // TODO: Send page with all character data cards
+
         res.status(200).json(characterData);
     } catch (err) {
         res.status(500).json(err);
@@ -81,10 +86,9 @@ router.delete('/:id', async (req, res) => {
                 id: req.params.id
             }
         });
-        res.status(200).json(characterData);
+        res.status(200).json({ message: "Character Deleted" });
     } catch (err) {
         res.status(500).json(err);
-        console.log(err);
     }
 })
 
