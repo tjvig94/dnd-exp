@@ -22,70 +22,71 @@ Character.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Character.hasOne(Other, {
-    onDelete: 'CASCADE'
-});
-Other.belongsTo(Character, {
-    foreignKey: 'character_id',
-});
+// Character.hasOne(Other, {
+//     onDelete: 'CASCADE'
+// });
+// Other.belongsTo(Character, {
+//     foreignKey: 'character_id',
+// });
 
-Character.belongsToMany(Language, {
-    through: 'LanguageCharacter',
-    onDelete: 'CASCADE'
-});
-Language.belongsToMany(Character, {
-    through: 'LanguageCharacter',
-    onDelete: 'CASCADE'
-});
+// Character.belongsToMany(Language, {
+//     through: 'LanguageCharacter',
+//     onDelete: 'CASCADE'
+// });
 
-StatSet.belongsTo(Character, {
-    foreignKey: 'character_id'
-});
+// Language.belongsToMany(Character, {
+//     through: 'LanguageCharacter',
+//     onDelete: 'CASCADE'
+// });
 
-Character.hasOne(StatSet, {
-    onDelete: 'CASCADE'
-});
+// StatSet.belongsTo(Character, {
+//     foreignKey: 'character_id'
+// });
 
-Character.belongsTo(Race, {
-    foreignKey: 'race_id'
-});
+// Character.hasOne(StatSet, {
+//     onDelete: 'CASCADE'
+// });
 
-Race.hasMany(Character, {
-    onDelete: 'RESTRICT'
-});
+// Character.belongsTo(Race, {
+//     foreignKey: 'race_id'
+// });
 
-Character.belongsTo(Class, {
-    foreignKey: 'class_id'
-});
+// Race.hasMany(Character, {
+//     onDelete: 'RESTRICT'
+// });
 
-Class.hasMany(Character, {
-    onDelete: 'RESTRICT'
-});
-Character.hasOne(SkillSet, {
-    onDelete: 'CASCADE'
-});
-Character.belongsToMany(Feature, {
-    through: 'FeatureCharacter',
-    onDelete: 'CASCADE'
-});
-Feature.belongsToMany(Character, {
-    through: 'FeatureCharacter',
-    onDelete: 'CASCADE'
-});
+// Character.belongsTo(Class, {
+//     foreignKey: 'class_id'
+// });
 
-Character.hasMany(Attacks, {
-    onDelete: 'RESTRICT'
-});
+// Class.hasMany(Character, {
+//     onDelete: 'RESTRICT'
+// });
+// Character.hasOne(SkillSet, {
+//     onDelete: 'CASCADE'
+// });
+// Character.belongsToMany(Feature, {
+//     through: 'FeatureCharacter',
+//     onDelete: 'CASCADE'
+// });
+// Feature.belongsToMany(Character, {
+//     through: 'FeatureCharacter',
+//     onDelete: 'CASCADE'
+// });
 
-Character.belongsToMany(Armor, {
-    through: 'ArmorCharacter',
-    onDelete: 'CASCADE'
-})
+// Character.hasMany(Attacks, {
+//     onDelete: 'RESTRICT'
+// });
 
-Armor.belongsToMany(Character, {
-    through: 'ArmorCharacter',
-    onDelete: 'RESTRICT'
-})
+// Character.belongsToMany(Armor, {
+//     through: 'ArmorCharacter',
+//     onDelete: 'CASCADE'
+// })
+
+// Armor.belongsToMany(Character, {
+//     through: 'ArmorCharacter',
+//     onDelete: 'RESTRICT'
+// })
 
 
 

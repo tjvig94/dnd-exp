@@ -29,6 +29,8 @@
     "express-handlebars": "^5.2.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "pg": "^8.5.1",
+    "postgres": "^1.0.2",
     "sequelize": "^6.5.1"
   },
   "devDependencies": {
