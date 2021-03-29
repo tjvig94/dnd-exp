@@ -2,47 +2,10 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const { Character, User }  = require('../../models');
 const axios = require('axios').default;
-const CharacterObj = require('../../lib/Character');
 const dndApi = 'https://www.dnd5eapi.co/api';
 const CharacterCreator = require("../../lib/CharacterCreator");
 
-// helper functions
-
-const getCategory = (response) => {
-    let array = [];
-    let category = response;
-    category.forEach(item => {
-        array.push(item.name);
-    });
-    return array;
-}
-const getEquipment = (response) => {
-    return response.map((potatoes) => potatoes.equipment.name);
-}
-
-const chooseEquipment = (response) => {
-    const equipmentArray = [];
-    response.forEach(choice => {
-        let choiceNumber = choice.choose;
-        for (i = 0; i < choiceNumber; i++) {
-            let options = choice.from;
-            equipmentArray.push(options[i].equipment.name);
-        }   
-    });
-    return equipmentArray;
-}
-
-const chooseProfOrLang = (response) => {
-    let array = [];
-    let allOptions = response.from;
-    let choiceNumber = response.choose;
-    for (i = 0; i < choiceNumber; i++) {
-        array.push(allOptions[i].name);
-    }   
-    return array;
-}
-
-// create character object with help from dnd api
+// Create new character, and add it to the database
 
 router.post('/', async (req, res) => {  
     try {
@@ -52,65 +15,80 @@ router.post('/', async (req, res) => {
             axios.get(`${dndApi}/races/${req.body.charRace}`).then((res) => res.data)
         ]);
 
-        // data from class
-        let hitDie = classData.hit_die;
-        let classProficiencies = getCategory(classData.proficiencies);
-        let savingThrows = getCategory(classData.saving_throws);
-        let startingEquipment = getEquipment(classData.starting_equipment);
-        let moreEquipment = chooseEquipment(classData.starting_equipment_options);
-        
-        // data from race
-        let speed = raceData.speed;
-        let raceProficiencies = getCategory(raceData.starting_proficiencies);
-        let moreProficiencies = (raceData.starting_proficiency_options) ? chooseProfOrLang(raceData.starting_proficiency_options) : null;
-        let someLanguages = getCategory(raceData.languages);
-        let moreLanguages = (raceData.language_options) ? chooseProfOrLang(raceData.language_options) : "";
-        let features = getCategory(raceData.traits);
-
-        let proficiencies = raceProficiencies.concat(moreProficiencies).concat(classProficiencies);
-        let languages = someLanguages.concat(moreLanguages);
-        let equipment = startingEquipment.concat(moreEquipment);
-
-        // const newChar = new CharactorCreator(classData, raceData).character;
-
-        const newCharacter = new CharacterObj(
-            req.body.charName, 
-            req.body.charClass,
+        const newChar = new CharacterCreator(
+            classData, 
+            raceData, 
+            req.body.charClass, 
             req.body.charRace, 
-            hitDie,
-            proficiencies, 
-            savingThrows, 
-            equipment,
-            speed,
-            languages,
-            features
-        );  
+            req.body.charName
+            ).character;
+            
+        Character.create({
+            name: newChar.name,
+            race: newChar.race,
+            class: newChar.class,
+            stats: newChar.stats,
+            modifiers: newChar.modifiers,
+            skills: newChar.skills,
+            speed: newChar.speed,
+            hitdice: newChar.hit_die,
+            equipment: newChar.equipment,
+            proficiencies: newChar.proficiencies,
+            features: newChar.features,
+            languages: newChar.languages
+        })
+        .then((character) => res.status(200).json(character));
 
-        res.status(200).json(newCharacter);
     } catch (err) { 
         res.status(500).json(err);
         console.log(err);
-    }   
-
-    //     promise info 
-    //     taker info and input into char class
-    //     new Character(datas.hitdie)
-    //     post to db
-
+    }
 })
 
-// Get all characters that belong to user 
+// Get one character
+
+router.get('/:id', async (req, res) => {
+    try {
+        const characterData = await Character.findByPk(req.params.id, {
+            attributes: ['id', 'name', 'stats', 'modifiers', 'skills', 'armourclass', 'initiative', 'speed', 'hitpoints', 'hitdice', 'equipment', 'proficiencies', 'languages', 'features', 'race', 'class'],
+            include: [{ model: User }]
+        })
+
+        // TODO: Send user to character-sheet page filled with this character's data
+
+        res.status(200).json(characterData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// Get all characters that belong to a user
 
 router.get('/', async (req, res) => {
     try {
         const characterData = await Character.findAll({
-            attributes: ['id', 'name'],
+            attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })
-        res.status(200).json(characterData);
 
+        // TODO: Send page with all character data cards
+
+        res.status(200).json(characterData);
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const characterData = await Character.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.status(200).json({ message: "Character Deleted" });
+    } catch (err) {
+        res.status(500).json(err);
     }
 })
 

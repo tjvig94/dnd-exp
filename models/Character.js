@@ -15,29 +15,31 @@ Character.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        race_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: { model: 'race', key: 'id' }
+        race: {
+            type: DataTypes.STRING,
+            // allowNull: false,
+            // references: { model: 'race', key: 'id' }
 
         },
-        class_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: { model: 'class', key: 'id' }
+        class: {
+            type: DataTypes.STRING,
+            // allowNull: false,
+            // references: { model: 'class', key: 'id' }
 
         },
         user_id: {
             type: DataTypes.INTEGER,
             references: { model: 'user', key: 'id' }
-
+        },
+        stats: {
+            type: DataTypes.JSON
         },
         modifiers: {
-            type: DataTypes.INTEGER
+            type: DataTypes.JSON
         },
 
         skills: {
-            type: DataTypes.INTEGER
+            type: DataTypes.JSON
         },
 
         armourclass: {
@@ -47,28 +49,28 @@ Character.init(
         initiative: {
             type: DataTypes.INTEGER
         },
-
         speed: {
             type: DataTypes.INTEGER
         },
-
         hitpoints: {
             type: DataTypes.INTEGER
         },
-
         hitdice: {
             type: DataTypes.INTEGER
         },
-
-        weapon: {
-            type: DataTypes.STRING
+        equipment: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
         },
-
-        traits: {
-            type: DataTypes.TEXT
+        proficiencies: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
         },
+        features: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
+        },
+        languages: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
+        }
     },
-
     {
         sequelize,
         timestamps: false,

@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     const generateBtn = $('.generate');
-    const apiURL = "https://www.dnd5eapi.co/api";
 
     generateBtn.on('click', (event) => {
         event.preventDefault();
