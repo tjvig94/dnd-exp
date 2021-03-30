@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     const generateBtn = $('.generate');
+    const characterBtn = $('.character-btn');
 
     generateBtn.on('click', (event) => {
         event.preventDefault();
@@ -19,4 +20,12 @@ $(document).ready(function(){
             })
         }        
     });
+
+    characterBtn.on('click', (event) => {
+        event.preventDefault();
+        console.log();
+        // $.get('/api/characterGenerator/:id', parseInt(this.dataset.id)).then(response => {
+        //     console.log(response);
+        // })
+    })
 });
