@@ -14,7 +14,6 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./js/index.js"></script>
 
   <title>Dungeons & Dragons</title>
 </head>
@@ -41,19 +40,20 @@
 
     <div class="container">
       <div class="col-md-6"></div>
-      <select class="form-select form-select-md mb-3" aria-label=".form-select-md">
+      <select class="form-select form-select-md mb-3 char_race" aria-label=".form-select-md">
         <option selected>Race</option>
-        <option value="1">Dwarf</option>
-        <option value="2">Elf</option>
-        <option value="3">Human</option>
+        <option value="dwarf">Dwarf</option>
+        <option value="elf">Elf</option>
+        <option value="human">Human</option>
       </select>
-      <select class="form-select form-select-md mb-3" aria-label=".form-select-md">
+      <select class="form-select form-select-md mb-3 char_class" aria-label=".form-select-md">
         <option selected>Class</option>
-        <option value="1">Rogue</option>
-        <option value="2">Barbarian</option>
-        <option value="3">Ranger</option>
+        <option value="rogue">Rogue</option>
+        <option value="barbarian">Barbarian</option>
+        <option value="ranger">Ranger</option>
       </select>
-      <button type="enter" class="btn btn-primary">Enter</button>
+      <input type="text" class="form-control char_name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Name">
+      <button type="submit" class="btn btn-primary generate">Generate</button>
 
     </div>
    
