@@ -1,6 +1,14 @@
 $(document).ready(function(){
 
     const generateBtn = $('.generate');
+    const viewCharactersBtn = $('.view-char');
+    const characterBtn = $('.char-card');
+
+    viewCharactersBtn.on('click', async (event) => {
+        event.preventDefault();
+        const response = await $.get('/characterselect');
+        (response) ? document.location.replace('/characterselect') : "";        
+    });
 
     generateBtn.on('click', (event) => {
         event.preventDefault();
@@ -29,5 +37,12 @@ $(document).ready(function(){
             })
         }        
         
+    });
+
+    characterBtn.on('click', async (event) => {
+        event.preventDefault();
+        const id = event.target.getAttribute(parseInt('data-id'));
+        const character = await $.get(`/api/characterGenerator/${id}`);
+        console.log(character);
     });
 });

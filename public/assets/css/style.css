@@ -107,11 +107,8 @@ h4 {
 
 }
 
-.card-body {
-background-color: black;
-
-
-
+.card {
+	width: 18rem;
 }
 
 #create {

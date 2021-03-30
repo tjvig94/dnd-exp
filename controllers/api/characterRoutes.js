@@ -70,9 +70,7 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })
-
         // TODO: Send page with all character data cards
-
         res.status(200).json(characterData);
     } catch (err) {
         res.status(500).json(err);
