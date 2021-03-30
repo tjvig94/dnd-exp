@@ -15,6 +15,7 @@ $(document).ready(function(){
             console.log("All fields must be entered");
         } else {
             $.post('/api/characterGenerator', userData).then(response => {
+                //this will be parsed out and passed to html
                 console.log(response);
                 response.equipment.forEach(element => console.log(element));
                 response.languages.forEach(element => console.log(element));
@@ -25,7 +26,7 @@ $(document).ready(function(){
                 console.log(response.modifiers.wisdom_mod);
                 response.proficiencies.forEach(element => console.log(element));
                 console.log(response.skills);
-                
+                console.log(JSON.stringify(response.skills));
             })
         }        
         
