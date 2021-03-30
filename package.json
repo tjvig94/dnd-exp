@@ -36,5 +36,8 @@
   "devDependencies": {
     "eslint": "^7.22.0",
     "nodemon": "^2.0.7"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }

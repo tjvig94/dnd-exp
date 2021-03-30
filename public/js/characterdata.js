@@ -16,7 +16,18 @@ $(document).ready(function(){
         } else {
             $.post('/api/characterGenerator', userData).then(response => {
                 console.log(response);
+                response.equipment.forEach(element => console.log(element));
+                response.languages.forEach(element => console.log(element));
+                console.log(response.modifiers.strength_mod);
+                console.log(response.modifiers.dexterity_mod);
+                console.log(response.modifiers.constitution_mod);
+                console.log(response.modifiers.intelligence_mod);
+                console.log(response.modifiers.wisdom_mod);
+                response.proficiencies.forEach(element => console.log(element));
+                console.log(response.skills);
+                
             })
         }        
+        
     });
 });
