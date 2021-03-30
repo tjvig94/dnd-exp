@@ -94,8 +94,7 @@ h4 {
 	border: solid #fff 1px;
 	margin-top: 25px;
 	opacity: 0.7;
-	font-weight: 600;
-	
+	font-weight: 600;	
 }
 
 
@@ -103,12 +102,23 @@ h4 {
 	transform: scale(1.1);
 	color: yellow;
 	font-weight: 600;
-	
-
 }
 
 .card {
 	width: 18rem;
+	color:white;
+	background-image: linear-gradient(grey, black);
+}
+
+div.char-card:hover {
+	/* background-color: beige; */
+	background-image: linear-gradient(black, grey);
+	cursor: pointer;
+}
+
+div.char-card:active {
+	background-color:bisque;
+	cursor: pointer;
 }
 
 #create {
