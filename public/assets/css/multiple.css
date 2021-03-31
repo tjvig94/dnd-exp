@@ -1,0 +1,118 @@
+
+#logo {
+    width:40px;
+    height:40px;
+    margin-right: 2px;
+    margin-bottom: 3px;
+}
+#bg {
+    /* background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='50' cy='0' r='50'/%3E%3Cg fill='%230f1011' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23181a1b' cx='50' cy='100' r='50'/%3E%3Cg fill='%23212326' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%232a2d30' cx='50' cy='200' r='50'/%3E%3Cg fill='%2333373b' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%233c4147' cx='50' cy='300' r='50'/%3E%3Cg fill='%23454c52' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%234f575e' cx='50' cy='400' r='50'/%3E%3Cg fill='%2359626a' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23636d77' cx='50' cy='500' r='50'/%3E%3Cg fill='%236d7984' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23788591' cx='50' cy='600' r='50'/%3E%3Cg fill='%2382919e' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%238d9dab' cx='50' cy='700' r='50'/%3E%3Cg fill='%2398a9b9' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a3b6c6' cx='50' cy='800' r='50'/%3E%3Cg fill='%23afc2d4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23bacfe2' cx='50' cy='900' r='50'/%3E%3Cg fill='%23c5dcf1' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d1e9ff' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain; */
+    background-image: url(../images/login-bg.jpg);
+    background-size: contain, 100% no-repeat;
+}
+.container {
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.row {
+    width: 99%;
+    justify-content: center;
+}
+.col-md {
+    padding: 1rem;
+    border: 2px solid #fff;
+}
+
+.item {
+    font-size: 15px;
+    float: left;
+    color: white;
+    background-clip: padding-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+    padding-top: 20px;
+    width: 150px;
+    height: 150px;
+    opacity: 75%;
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+}
+
+.nameBox {
+    font-size: 15px;
+    float: left;
+    color:white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+    padding-top: 20px;
+    width: 300px;
+    height: 150px;
+    opacity: 85%;
+    font-family: 'Cormorant SC', serif;
+}
+
+/* .item, .nameBox {
+    background-image: url(../images/team.jpg);
+    background-size: 65%;
+} */
+.classLogo {
+    width: 125px;
+    height: 125px;
+}
+.charName {
+    width: 15rem;
+}
+.subText {
+    opacity: .5;
+}
+.classRaceName {
+    font-size: 1vw;
+}
+
+.inputText {
+    font-size: 60px;
+}
+
+/* languages features equipment */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -100px;
+   
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .otherBoxes {
+      width: 400px;
+  }

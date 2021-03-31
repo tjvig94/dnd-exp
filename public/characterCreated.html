@@ -9,24 +9,29 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <!-- calling multiple.js -->
-        <link href="./multiple.css" rel="stylesheet">
+        <link href="./assets/css/multiple.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.min.js" integrity="sha512-h7sEAeLJrgSKuLDecT6NeHSUlbSwpS30IqGu21caM/sa//cWhp5J5D+MOZ0C5QM4GbJlZeEY1ZXXGVtI5m1arg==" crossorigin="anonymous"></script>        
         <!-- link to this pages css file -->
         <link href="./assets/css/charCreated.css">
         <!-- jquery call -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap" rel="stylesheet">
+    </head>
     <body id="bg">
-        <div class="row">
+
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="./index.html">DND Creator</a>
+                    <a href="./index.html">
+                  <img src="./assets/images/login-page.png" id="logo">
+                    </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Create</a>
@@ -45,54 +50,361 @@
                   </div>
                 </div>
               </nav>
-    
-    
+
         <div class="container">
             <div class="row general-info">
-                <div class="item col-md-4 p-2 charName">Name:</div>
-                <div class="item col-md-4 p-2 charRace">Race:</div>
-                <div class="item col-md-4 p-2 charClass">Class:</div>
+                <div class="nameBox col-md-4 p-2 ">
+                    <div>
+                    <span class="charName classRaceName"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Name</name>
+                    </div>
+                </div>
+                
+
+                <div class="item col-md-4 p-2">
+                    <div >
+                        <span class="charRace classRaceName"></span>
+                    </div>
+                    <div class="raceSubTextBox">
+                        <span class="subText">Race</span>
+                    </div>
+                </div>
+                <div class="item col-md-4 p-2">
+                    <div> 
+                        <span class="charClass classRaceName"></span>
+                    </div>
+                    <div> 
+                        <span class="subText">Class</span>
+                    </div>
+                </div>
+                <!-- <div class="item col-md-2 p-2"> <img src="./assets/images/Barbarian.png" class="classLogo"> </div> -->
+
             </div>
+                
+
 
             <div class="row genStats">
-                <div class="item col-md-2 p-2 strengthStat">Strength:</div>
-                <div class="item col-md-2 p-2 dexterityStat">Dexterity:</div>
-                <div class="item col-md-2 p-2 constStat">Constitution:</div>
-                <div class="item col-md-2 p-2 intStat">Intelligence:</div>
-                <div class="item col-md-2 p-2 wisStat">Wisdom:</div>
-                <div class="item col-md-2 p-2 charCharisma">Charisma:</div>
-            </div>
-            <div class="row genMods">
-                <div class="item col-md-2 p-2 strMod">Strength Mod:</div>
-                <div class="item col-md-2 p-2 dexMod">Dexterity Mod:</div>
-                <div class="item col-md-2 p-2 constMod">Constitution Mod:</div>
-                <div class="item col-md-2 p-2 intMod">Intelligence Mod:</div>
-                <div class="item col-md-2 p-2 widMod">Wisdom Mod:</div>
-                <div class="item col-md-2 p-2 charMod">Charisma Mod:</div>
-            </div>
-            <div class="row abilities">
-                <div class="item col-md-1 p-2 arcro">Acrobatics:</div>
-                <div class="item col-md-1 p-2 anHandling">Animal Handling:</div>
-                <div class="item col-md-1 p-2 arcana">Arcana:</div>
-                <div class="item col-md-1 p-2 athlet">Athletics:</div>
-                <div class="item col-md-1 p-2 decep">Deception:</div>
-                <div class="item col-md-1 p-2 history">History:</div>
-                <div class="item col-md-1 p-2 insight">Insight:</div>
-                <div class="item col-md-1 p-2 intimidate">Intimidation:</div>
-                <div class="item col-md-1 p-2 inves">Investigation:</div>
-                <div class="item col-md-1 p-2 medicine">Medicine:</div>
-                <div class="item col-md-1 p-2 nature">Nature:</div>
-                <div class="item col-md-1 p-2 religion">Religion:</div>
-                <div class="item col-md-1 p-2 sOH">Sleight of Hand:</div>
-                <div class="item col-md-1 p-2 stealth">Stealth:</div>
-                <div class="item col-md-1 p-2 survival">Survival:</div>
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"> Strength measures your character’s muscle and physical power. This ability is especially important for Fighters, barbarians, paladins, rangers, and monks because it helps them prevail in combat. Strength also limits the amount of equipment your character can carry.</span>
+                    <div>
+                        <span class="strengthStat inputText"></span>
+                    </div>
+                    <div> 
+                        <span class="subText">Strength</span>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext">Dexterity measures hand-eye coordination, agility, reflexes, and balance. This ability is the most important one for rogues, but it’s also high on the list for characters who typically wear light or medium armor (rangers and barbarians) or no armor at all (monks, wizards, and sorcerers), and for anyone who wants to be a skilled archer.</span>
+                    <div> 
+                        <div>
+                            <span class="dexterityStat inputText"></span>
+                        </div>
+                        <div> 
+                            <span class="subText">Dexterity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext">Constitution represents your character’s health and stamina. A Constitution bonus increases a character’s hit points, so the ability is important for all classes.</span>
+                    <div> 
+                        <div>
+                            <span class="constStat inputText"></span>
+                        </div>
+                        <div> 
+                            <span class="subText">Constitution</span>
+                        </div>
+                </div>
             </div>
 
+                <div class="item col-md-2 p-2 intStat tooltip">
+                    <span class="tooltiptext">Intelligence determines how well your character learns and reasons. This ability is important for wizards because it affects how many spells they can cast, how hard their spells are to resist, and how powerful their spells can be. It’s also important for any character who wants to have a wide assortment of skills.</span>
+                    <div>
+                        <span class="intStat inputText"></span>
+                    </div>
+
+                    <div>
+                    <span class="subText">Intelligence</span>
+                    </div>
+
+                </div>
+
+                <div class="item col-md-2 p-2 wisStat tooltip">
+                    <span class="tooltiptext"> Wisdom describes a character’s willpower, common sense, perception, and intuition. While Intelligence represents one’s ability to analyze information, Wisdom represents being in tune with and aware of one’s surroundings. Wisdom is the most important ability for clerics and druids, and it is also important for paladins and rangers. If you want your character to have acute senses, put a high score in Wisdom. Every creature has a Wisdom score.</span>
+                    <div>
+                        <span class="wisStat inputText"></span>
+                    </div>
+                    <div> 
+                        <span class="subText">Wisdom</span>
+                    </div>
+                </div>
+
+            <div class="item col-md-2 p-2 tooltip">
+                <span class="tooltiptext">Charisma measures a character’s force of personality, persuasiveness, personal magnetism, ability to lead, and physical attractiveness. This ability represents actual strength of personality, not merely how one is perceived by others in a social setting. Charisma is most important for paladins, sorcerers, and bards. It is also important for clerics, since it affects their ability to turn undead. Every creature has a Charisma score.</span>
+                <div>
+                    <span class="charCharisma inputText"></span>
+                </div>
+                <div>
+                    <span class="subText">Charisma</span>
+                </div>
+            </div>
+            </div>
+
+            <div class="row genMods">
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="strMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Strength Mod </span>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="dexMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Dexterity Mod</span>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="constMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Constitution Mod</span>
+                    </div>
+                </div>
                 
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="intMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Intelligence Mod</span>
+                    </div>
+                </div>
                 
-        
-              </div>
-          </div>
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="wisMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Wisdom Mod</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-2 p-2 tooltip">
+                    <span class="tooltiptext"></span>
+                    <div>
+                        <span class="charMod inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Charisma Mod</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row abilities">
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Acrobatics. Your Dexterity (Acrobatics) check covers your attempt to stay on your feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope, or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips.</span>
+                    <div>
+                        <span class="arcro inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Acrobatics</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext"> When there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a risky maneuver.</span>
+                <div>
+                    <span class="anHandling inputText"></span>
+                </div>
+                <div>
+                    <span class="subText">Animal Handling</span>
+                </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Arcana. Your Intelligence (Arcana) check measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes.</span>
+                    <div>
+                        <span class="arcana inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Arcana</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Athletics. Your Strength (Athletics) check covers difficult situations you encounter while climbing, jumping, or swimming.</span>
+                    <div>
+                        <span class="athlet inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Athletics</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Your Charisma (Deception) check determines whether you can convincingly hide the truth, either verbally or through your actions. This deception can encompass everything from misleading others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard, con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with false assurances, or maintain a straight face while telling a blatant lie.</span>
+                    <div>
+                        <span class="decep inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Deception</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Your Intelligence (History) check measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations.</span>
+                    <div>
+                        <span class="history inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">History</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Your Wisdom (Insight) check decides whether you can determine the true intentions of a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning clues from body language, speech habits, and changes in mannerisms.</span>
+                    <div>
+                        <span class="insight inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Insight</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">When you attempt to influence someone through overt threats, hostile actions, and physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the edge of a broken bottle to convince a sneering vizier to reconsider a decision.</span>
+                    <div>
+                        <span class="intimidate inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Intimidation</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">When you look around for clues and make deductions based on those clues, you make an Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also call for an Intelligence (Investigation) check.</span>
+                    <div>
+                        <span class="inves inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Investigation</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an illness</span>
+                    <div>
+                        <span class="medicine inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Medicine</span>
+                    </div>
+                </div>
+                
+       
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Your Intelligence (Nature) check measures your ability to recall lore about terrain, plants and animals, the weather, and natural cycles.</span>
+                    <div>
+                        <span class="nature inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Nature</span>
+                    </div>
+                </div>
+
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Your Intelligence (Religion) check measures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults.</span>
+                    <div>
+                        <span class="religion inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Religion</span>
+                    </div>
+                </div>
+
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check. The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin purse off another person or slip something out of another person's pocket.</span>
+                    <div>
+                        <span class="sOH inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Sleight of Hand</span>
+                    </div>
+                </div>
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard.</span>
+                    <div>
+                        <span class="stealth inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Stealth</span>
+                    </div>
+                </div>
+                <div class="item col-md-1 p-2 tooltip">
+                    <span class="tooltiptext">The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the weather, or avoid quicksand and other natural hazards.</span>
+                    <div>
+                        <span class="survival inputText"></span>
+
+                    </div>
+                    <div>
+                        <span class="subText">Survival</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row others">
+
+                <div class="item otherBoxes col-md-3 p-2 ">
+                    <div >
+                        <span class="equip inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Equipment</span>
+                    </div>
+                </div>
+                
+                <div class="item otherBoxes col-md-3 p-2 ">
+                    <div >
+                        <span class="feature inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Features</span>
+                    </div>
+                </div>
+
+                <div class="item otherBoxes col-md-3 p-2 ">
+                    <div >
+                        <span class="language inputText"></span>
+                    </div>
+                    <div>
+                        <span class="subText">Languages</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
 
 
 
