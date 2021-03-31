@@ -32,92 +32,435 @@
     </nav>
     <div class="container">
       <div class="row general-info">
-        <div class="item col-md-4 p-2 charName">Name: {{character.name}}</div>
-        <div class="item col-md-4 p-2 charRace">Race: {{character.race}}</div>
-        <div class="item col-md-4 p-2 charClass">Class: {{character.class}}</div>
+        <div class="nameBox col-md-4 p-2">
+          <img class="amImg" src="./assets/images/mike pic.jpg" alt="characterImg">
+          <div>
+            <span class="charName classRaceName">{{character.name}}</span>
+          </div>
+          <div>
+            <span class="subText">Name</name>
+          </div>
+        </div>
+
+        <div class="item col-md-4 p-2">
+          <div>
+            <span class="charRace classRaceName">{{character.race}}</span>
+          </div>
+          <div class="raceSubTextBox">
+            <span class="subText">Race</span>
+          </div>
+        </div>
+        <div class="item col-md-4 p-2">
+          <div class="item col-md-4 p-2">
+            <div>
+              <span class="charClass classRaceName">{{character.class}}</span>
+            </div>
+            <div>
+              <span class="subText">Class</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row genStats">
-        <div class="item col-md-2 p-2 strengthStat">Strength: {{character.stats.strength}}</div>
-        <div class="item col-md-2 p-2 dexterityStat">Dexterity: {{character.stats.dexterity}}</div>
-        <div class="item col-md-2 p-2 constStat">Constitution: {{character.stats.constitution}}</div>
-        <div class="item col-md-2 p-2 intStat">Intelligence: {{character.stats.intelligence}}</div>
-        <div class="item col-md-2 p-2 wisStat">Wisdom: {{character.stats.wisdom}}</div>
-        <div class="item col-md-2 p-2 charCharisma">Charisma: {{character.stats.charisma}}</div>
+        <div class="item col-md-2 p-2 tooltip">
+          <span class="tooltiptext"> Strength measures your character’s muscle and physical power. This ability is
+            especially important for Fighters, barbarians, paladins, rangers, and monks because it helps them prevail in
+            combat. Strength also limits the amount of equipment your character can carry.</span>
+          <div>
+            <span class="strengthStat inputText">{{character.stats.strength}}</span>
+          </div>
+          <div>
+            <span class="subText">Strength</span>
+          </div>
+        </div>
+
+        <div class="item col-md-2 p-2 tooltip">
+          <span class="tooltiptext">Dexterity measures hand-eye coordination, agility, reflexes, and balance. This
+            ability is the most important one for rogues, but it’s also high on the list for characters who typically
+            wear light or medium armor (rangers and barbarians) or no armor at all (monks, wizards, and sorcerers), and
+            for anyone who wants to be a skilled archer.</span>
+          <div>
+            <div>
+              <span class="dexterityStat inputText">{{character.stats.dexterity}}</span>
+            </div>
+            <div>
+              <span class="subText">Dexterity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="item col-md-2 p-2 tooltips">
+          <span class="tooltiptext">Constitution represents your character’s health and stamina. A Constitution bonus
+            increases a character’s hit points, so the ability is important for all classes.</span>
+          <div>
+            <div>
+              <span class="constStat inputText">{{character.stats.constitution}}</span>
+            </div>
+            <div>
+              <span class="subText">Constitution</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="item col-md-2 p-2 tooltip">
+          <span class="tooltiptext">Intelligence determines how well your character learns and reasons. This ability is
+            important for wizards because it affects how many spells they can cast, how hard their spells are to resist,
+            and how powerful their spells can be. It’s also important for any character who wants to have a wide
+            assortment of skills.</span>
+          <div>
+            <span class="intStat inputText">{{character.stats.intelligence}}</span>
+          </div>
+
+          <div>
+            <span class="subText">Intelligence</span>
+          </div>
+
+        </div>
+        <div class="item col-md-2 p-2 tooltip">
+          <span class="tooltiptext"> Wisdom describes a character’s willpower, common sense, perception, and intuition.
+            While Intelligence represents one’s ability to analyze information, Wisdom represents being in tune with and
+            aware of one’s surroundings. Wisdom is the most important ability for clerics and druids, and it is also
+            important for paladins and rangers. If you want your character to have acute senses, put a high score in
+            Wisdom. Every creature has a Wisdom score.</span>
+          <div>
+            <span class="wisStat inputText">{{character.stats.wisdom}}</span>
+          </div>
+          <div>
+            <span class="subText">Wisdom</span>
+          </div>
+        </div>
+        <div class="item col-md-2 p-2 tooltip">
+          <span class="tooltiptext">Charisma measures a character’s force of personality, persuasiveness, personal
+            magnetism, ability to lead, and physical attractiveness. This ability represents actual strength of
+            personality, not merely how one is perceived by others in a social setting. Charisma is most important for
+            paladins, sorcerers, and bards. It is also important for clerics, since it affects their ability to turn
+            undead. Every creature has a Charisma score.</span>
+          <div>
+            <span class="charCharisma inputText">{{character.stats.charisma}}</span>
+          </div>
+          <div>
+            <span class="subText">Charisma</span>
+          </div>
+        </div>
       </div>
+
       <div class="row genMods">
-        <div class="item col-md-2 p-2 strMod">Strength Mod: {{character.modifiers.strength_mod}}</div>
-        <div class="item col-md-2 p-2 dexMod">Dexterity Mod: {{character.modifiers.dexterity_mod}}</div>
-        <div class="item col-md-2 p-2 constMod">Constitution Mod: {{character.modifiers.constitution_mod}}</div>
-        <div class="item col-md-2 p-2 intMod">Intelligence Mod: {{character.modifiers.intelligence_mod}}</div>
-        <div class="item col-md-2 p-2 widMod">Wisdom Mod: {{character.modifiers.wisdom_mod}}</div>
-        <div class="item col-md-2 p-2 charMod">Charisma Mod: {{character.modifiers.charisma_mod}}</div>
+        <div class="item col-md-2 p-2">
+          <div>
+            <span class="strMod inputText">{{character.modifiers.strength_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Strength Mod </span>
+          </div>
+        </div>
+
+        <div class="item col-md-2 p-2">
+          <div>
+            <span class="dexMod inputText">{{character.modifiers.dexterity_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Dexterity Mod</span>
+          </div>
+        </div>
+
+        <div class="item col-md-2 p-2 constMod">
+          <div>
+            <span class="constMod inputText">{{character.modifiers.constitution_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Constitution Mod</span>
+          </div>
+        </div>
+        <div class="item col-md-2 p-2 intMod">
+          <div>
+            <span class="intMod inputText">{{character.modifiers.intelligence_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Intelligence Mod</span>
+          </div>
+        </div>
+
+        <div class="item col-md-2 p-2 widMod">
+          <div>
+            <span class="wisMod inputText">{{character.modifiers.wisdom_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Wisdom Mod</span>
+          </div>
+        </div>
+        <div class="item col-md-2 p-2 charMod">
+          <div>
+            <span class="charMod inputText">{{character.modifiers.charisma_mod}}</span>
+          </div>
+          <div>
+            <span class="subText">Charisma Mod</span>
+          </div>
+        </div>
       </div>
+
       <div class="row abilities">
-        <div class="item col-md-1 p-2 arcro">Acrobatics: {{character.skills.acrobatics}}</div>
-        <div class="item col-md-1 p-2 anHandling">Animal Handling: {{character.skills.animal_handling}}</div>
-        <div class="item col-md-1 p-2 arcana">Arcana: {{character.skills.arcana}}</div>
-        <div class="item col-md-1 p-2 athlet">Athletics: {{character.skills.atheltics}}</div>
-        <div class="item col-md-1 p-2 decep">Deception: {{character.skills.deception}}</div>
-        <div class="item col-md-1 p-2 history">History: {{character.skills.history}}</div>
-        <div class="item col-md-1 p-2 insight">Insight: {{character.skills.insight}}</div>
-        <div class="item col-md-1 p-2 intimidate">Intimidation: {{character.skills.intimidation}}</div>
-        <div class="item col-md-1 p-2 inves">Investigation: {{character.skills.investigation}}</div>
-        <div class="item col-md-1 p-2 medicine">Medicine: {{character.skills.medicine}}</div>
-        <div class="item col-md-1 p-2 nature">Nature: {{character.skills.nature}}</div>
-        <div class="item col-md-1 p-2 religion">Religion: {{character.skills.religion}}</div>
-        <div class="item col-md-1 p-2 sOH">Sleight of Hand: {{character.skills.sleight_of_hand}}</div>
-        <div class="item col-md-1 p-2 stealth">Stealth: {{character.skills.stealth}}</div>
-        <div class="item col-md-1 p-2 survival">Survival: {{character.skills.survival}}</div>
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Acrobatics. Your Dexterity (Acrobatics) check covers your attempt to stay on your
+            feet in a tricky situation, such as when you're trying to run across a sheet of ice, balance on a tightrope,
+            or stay upright on a rocking ship's deck. The GM might also call for a Dexterity (Acrobatics) check to see
+            if you can perform acrobatic stunts, including dives, rolls, somersaults, and flips.</span>
+          <div>
+            <span class="arcro inputText">{{character.skills.acrobatics}}</span>
+          </div>
+          <div>
+            <span class="subText">Acrobatics</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext"> When there is any question whether you can calm down a domesticated animal, keep a
+            mount from getting spooked, or intuit an animal's intentions, the GM might call for a Wisdom (Animal
+            Handling) check. You also make a Wisdom (Animal Handling) check to control your mount when you attempt a
+            risky maneuver.</span>
+          <div>
+            <span class="anHandling inputText">{{character.skills.animal_handling}}</span>
+          </div>
+          <div>
+            <span class="subText">Animal Handling</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Arcana. Your Intelligence (Arcana) check measures your ability to recall lore about
+            spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of
+            those planes.</span>
+          <div>
+            <span class="arcana inputText">{{character.skills.arcana}}</span>
+          </div>
+          <div>
+            <span class="subText">Arcana</span>
+          </div>
+        </div>
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Athletics. Your Strength (Athletics) check covers difficult situations you encounter
+            while climbing, jumping, or swimming.</span>
+          <div>
+            <span class="athlet inputText">{{character.skills.atheltics}}</span>
+          </div>
+          <div>
+            <span class="subText">Athletics</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">{{character.skills.deception}}
+          <span class="tooltiptext">Your Charisma (Deception) check determines whether you can convincingly hide the
+            truth, either verbally or through your actions. This deception can encompass everything from misleading
+            others through ambiguity to telling outright lies. Typical situations include trying to fast-talk a guard,
+            con a merchant, earn money through gambling, pass yourself off in a disguise, dull someone's suspicions with
+            false assurances, or maintain a straight face while telling a blatant lie.</span>
+          <div>
+            <span class="decep inputText">{{character.skills.deception}}</span>
+          </div>
+          <div>
+            <span class="subText">Deception</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Your Intelligence (History) check measures your ability to recall lore about
+            historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost
+            civilizations.</span>
+          <div>
+            <span class="history inputText">{{character.skills.history}}</span>
+          </div>
+          <div>
+            <span class="subText">History</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Your Wisdom (Insight) check decides whether you can determine the true intentions of
+            a creature, such as when searching out a lie or predicting someone's next move. Doing so involves gleaning
+            clues from body language, speech habits, and changes in mannerisms.</span>
+          <div>
+            <span class="insight inputText">{{character.skills.insight}}</span>
+          </div>
+          <div>
+            <span class="subText">Insight</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">When you attempt to influence someone through overt threats, hostile actions, and
+            physical violence, the GM might ask you to make a Charisma (Intimidation) check. Examples include trying to
+            pry information out of a prisoner, convincing street thugs to back down from a confrontation, or using the
+            edge of a broken bottle to convince a sneering vizier to reconsider a decision.</span>
+          <div>
+            <span class="intimidate inputText">{{character.skills.intimidation}}</span>
+
+          </div>
+          <div>
+            <span class="subText">Intimidation</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">When you look around for clues and make deductions based on those clues, you make an
+            Intelligence (Investigation) check. You might deduce the location of a hidden object, discern from the
+            appearance of a wound what kind of weapon dealt it, or determine the weakest point in a tunnel that could
+            cause it to collapse. Poring through ancient scrolls in search of a hidden fragment of knowledge might also
+            call for an Intelligence (Investigation) check.</span>
+          <div>
+            <span class="inves inputText">{{character.skills.investigation}}</span>
+          </div>
+          <div>
+            <span class="subText">Investigation</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">A Wisdom (Medicine) check lets you try to stabilize a dying companion or diagnose an
+            illness</span>
+          <div>
+            <span class="medicine inputText">{{character.skills.medicine}}</span>
+          </div>
+          <div>
+            <span class="subText">Medicine</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">{{character.skills.nature}}
+          <span class="tooltiptext">Your Intelligence (Nature) check measures your ability to recall lore about terrain,
+            plants and animals, the weather, and natural cycles.</span>
+          <div>
+            <span class="nature inputText">{{character.skills.nature}}</span>
+          </div>
+          <div>
+            <span class="subText">Nature</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Your Intelligence (Religion) check measures your ability to recall lore about
+            deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults.</span>
+          <div>
+            <span class="religion inputText">{{character.skills.religion}}</span>
+          </div>
+          <div>
+            <span class="subText">Religion</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Whenever you attempt an act of legerdemain or manual trickery, such as planting
+            something on someone else or concealing an object on your person, make a Dexterity (Sleight of Hand) check.
+            The GM might also call for a Dexterity (Sleight of Hand) check to determine whether you can lift a coin
+            purse off another person or slip something out of another person's pocket.</span>
+          <div>
+            <span class="sOH inputText">{{character.skills.sleight_of_hand}}</span>
+          </div>
+          <div>
+            <span class="subText">Sleight of Hand</span>
+          </div>
+        </div>
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">Make a Dexterity (Stealth) check when you attempt to conceal yourself from enemies,
+            slink past guards, slip away without being noticed, or sneak up on someone without being seen or
+            heard.</span>
+          <div>
+            <span class="stealth inputText">{{character.skills.stealth}}</span>
+          </div>
+          <div>
+            <span class="subText">Stealth</span>
+          </div>
+        </div>
+
+        <div class="item col-md-1 p-2 tooltip">
+          <span class="tooltiptext">The GM might ask you to make a Wisdom (Survival) check to follow tracks, hunt wild
+            game, guide your group through frozen wastelands, identify signs that owlbears live nearby, predict the
+            weather, or avoid quicksand and other natural hazards.</span>
+          <div>
+            <span class="survival inputText">{{character.skills.survival}}</span>
+
+          </div>
+          <div>
+            <span class="subText">Survival</span>
+          </div>
+        </div>
+      </div>
+      <div class="row others">
+
+        <div class="item otherBoxes col-md-3 p-2 ">
+          <div>
+            <span class="equip inputText"></span>
+          </div>
+          <div>
+            <span class="subText">Equipment</span>
+          </div>
+        </div>
+
+        <div class="item otherBoxes col-md-3 p-2 ">
+          <div>
+            <span class="feature inputText"></span>
+          </div>
+          <div>
+            <span class="subText">Features</span>
+          </div>
+        </div>
+
+        <div class="item otherBoxes col-md-3 p-2 ">
+          <div>
+            <span class="language inputText"></span>
+          </div>
+          <div>
+            <span class="subText">Languages</span>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
   </div>
+  <script src="/js/characterdata.js"></script>
+  <script src="/assets/js/multiple.js"></script>
 
 
-</div>
-<script src="/js/characterdata.js"></script>
-<script src="/assets/js/multiple.js"></script>
-
-
-{{!-- "character"."id" = '39';
-{
+  {{!-- "character"."id" = '39';
+  {
   id: 39,
   name: 'robert1',
   stats: {
-    strength: 17,
-    dexterity: 13,
-    constitution: 12,
-    intelligence: 14,
-    wisdom: 8,
-    charisma: 12
+  strength: 17,
+  dexterity: 13,
+  constitution: 12,
+  intelligence: 14,
+  wisdom: 8,
+  charisma: 12
   },
   modifiers: {
-    strength_mod: 1,
-    dexterity_mod: 0,
-    constitution_mod: -1,
-    intelligence_mod: 2,
-    wisdom_mod: 1,
-    charisma_mod: 2
+  strength_mod: 1,
+  dexterity_mod: 0,
+  constitution_mod: -1,
+  intelligence_mod: 2,
+  wisdom_mod: 1,
+  charisma_mod: 2
   },
   skills: {
-    acrobatics: 0,
-    animal_handling: 1,
-    arcana: 2,
-    atheltics: 1,
-    deception: 2,
-    history: 2,
-    insight: 1,
-    intimidation: 2,
-    investigation: 2,
-    medicine: 1,
-    nature: 2,
-    perception: 1,
-    performance: 2,
-    persuasion: 2,
-    religion: 2,
-    sleight_of_hand: 0,
-    stealth: 0,
-    survival: 1
+  acrobatics: 0,
+  animal_handling: 1,
+  arcana: 2,
+  atheltics: 1,
+  deception: 2,
+  history: 2,
+  insight: 1,
+  intimidation: 2,
+  investigation: 2,
+  medicine: 1,
+  nature: 2,
+  perception: 1,
+  performance: 2,
+  persuasion: 2,
+  religion: 2,
+  sleight_of_hand: 0,
+  stealth: 0,
+  survival: 1
   },
   armourclass: null,
   initiative: null,
@@ -126,26 +469,26 @@
   hitdice: 12,
   equipment: [ "Explorer's Pack", 'Javelin', 'Greataxe', 'Handaxe' ],
   proficiencies: [
-    'Battleaxes',
-    'Handaxes',
-    'Light hammers',
-    'Warhammers',
-    'Light armor',
-    'Medium armor',
-    'Shields',
-    'Simple weapons',
-    'Martial weapons',
-    "Smith's tools"
+  'Battleaxes',
+  'Handaxes',
+  'Light hammers',
+  'Warhammers',
+  'Light armor',
+  'Medium armor',
+  'Shields',
+  'Simple weapons',
+  'Martial weapons',
+  "Smith's tools"
   ],
   languages: [ 'Common', 'Dwarvish', '' ],
   features: [
-    'Darkvision',
-    'Dwarven Resilience',
-    'Stonecunning',
-    'Dwarven Combat Training',
-    'Tool Proficiency'
+  'Darkvision',
+  'Dwarven Resilience',
+  'Stonecunning',
+  'Dwarven Combat Training',
+  'Tool Proficiency'
   ],
   race: 'dwarf',
   class: 'barbarian',
   user: null
-} --}}
+  } --}}
