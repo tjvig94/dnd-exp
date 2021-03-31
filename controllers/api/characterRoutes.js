@@ -3,7 +3,6 @@ const withAuth = require('../../utils/auth');
 const { Character, User }  = require('../../models');
 const axios = require('axios').default;
 const dndApi = 'https://www.dnd5eapi.co/api';
-const CharacterCreator = require("../../lib/CharacterCreator");
 const Human = require('../../lib/Human');
 const Dwarf = require('../../lib/Dwarf');
 const Elf = require('../../lib/Elf');
@@ -59,7 +58,9 @@ router.post('/', async (req, res) => {
             modifiers: finChar.modifiers,
             skills: finChar.skills,
             speed: finChar.speed,
+            hitpoints: finChar.hit_points,
             hitdice: finChar.hit_die,
+            initiative: finChar.initiative,
             equipment: finChar.equipment,
             proficiencies: finChar.proficiencies,
             features: finChar.features,
