@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt');
 const Sequelize = require('sequelize')
 const jwtSecret = require('./jwtConfig')
-const passportJWT = require('passport-jwt')
+const passportJWT = require('passport')
 
 const BCRYPT_SALT_ROUNDS = 12;
 const Op = Sequelize.Op;
@@ -17,12 +17,12 @@ passport.use(
     'register',
     new LocalStrategy(
         {
-            usernameField: 'name',
+            usernameField: 'email',
             passwordField: 'password',
             passReqToCallback: true,
             session: false,
         },
-        (req, name, password, done) => {
+        (req, email, password, done) => {
             console.log(name);
             console.log(req.body.email);
 
@@ -43,7 +43,7 @@ passport.use(
                             message: 'username or email already taken',
                         });
                     }
-                    // bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
+                    bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
                         User.create({
                             name,
                             password: hashedPassword,
@@ -52,9 +52,10 @@ passport.use(
                             console.log('user created');
                             return done(null, user);
                         });
-                    // });
+                    });
                 });
             } catch (err) {
+                res.status(400).json(err)
                 return done(err);
             }
         },
@@ -65,15 +66,15 @@ passport.use(
     'login',
     new LocalStrategy(
         {
-            usernameField: 'name',
+            usernameField: 'email',
             passwordField: 'password',
             session: false,
         },
-        (username, password, done) => {
+        (email , password, done) => {
             try {
                 User.findOne({
                     where: {
-                        username,
+                        email,
                     },
                 }).then(user => {
                     if (user === null) {
@@ -81,8 +82,8 @@ passport.use(
                     }
                     bcrypt.compare(password, user.password).then(response => {
                         if (response !== true) {
-                            console.log('passwords do not match');
-                            return done(null, false, { message: 'passwords do not match' });
+                            console.log('password or email do not match');
+                            return done(null, false, { message: 'password or email do not match' });
                         }
                         console.log('user found & authenticated');
                         return done(null, user);

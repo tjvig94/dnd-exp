@@ -4,7 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const passport = require('passport-jwt')
+const passport = require('passport')
+
 
 require('./config/passport')
 
@@ -28,6 +29,7 @@ const sess = {
 };
 
 app.use(session(sess));
+
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
