@@ -59,6 +59,7 @@ router.post('/', async (req, res) => {
             skills: finChar.skills,
             speed: finChar.speed,
             hitpoints: finChar.hit_points,
+            armourclass: finChar.armor_class,
             hitdice: finChar.hit_die,
             initiative: finChar.initiative,
             equipment: finChar.equipment,
