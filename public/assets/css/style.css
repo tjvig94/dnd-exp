@@ -1,8 +1,4 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
-
-
-
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -12,30 +8,23 @@
 body {
 	font-family: 'Cormorant', sans-serif;
 	line-height: 1.5;
-   
 }
-
 
 a {
 	text-decoration: none;
 	color: var(--primary-color);
 }
 
-
-
 h1 {
 	font-weight: 600;
 	font-size: 80px;
 	line-height: 1.5;
 	margin-bottom: 25px;
-	letter-spacing: normal;
-	
-	
+	letter-spacing: 10px
 }
+
 h4 {
-
-	font-size:100px;
-
+	font-size: 100px;
 }
 
 .showcase {
@@ -55,14 +44,13 @@ h4 {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: var(--primary-color) url(../../images/firePic.png) no-repeat center
-		center/cover;
+	background: var(--primary-color) url(../../images/firePic.png) no-repeat center center/cover;
 }
 
 .video-container video {
 	min-width: 100%;
 	min-height: 100%;
-  position: absolute;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -70,7 +58,6 @@ h4 {
 }
 
 .video-container:after {
-
 	z-index: 1;
 	height: 100%;
 	width: 100%;
@@ -79,7 +66,6 @@ h4 {
 	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
 }
-
 
 .content {
 	z-index: 2;
@@ -94,9 +80,9 @@ h4 {
 	border: solid #fff 1px;
 	margin-top: 25px;
 	opacity: 0.7;
-	font-weight: 600;	
+	font-weight: 600;
+	width: fit-content;
 }
-
 
 .btn:hover {
 	transform: scale(1.1);
@@ -106,7 +92,7 @@ h4 {
 
 .card {
 	width: 18rem;
-	color:white;
+	color: white;
 	background-image: linear-gradient(grey, black);
 }
 
@@ -117,14 +103,14 @@ div.char-card:hover {
 }
 
 div.char-card:active {
-	background-color:bisque;
+	background-color: bisque;
 	cursor: pointer;
 }
 
 #create {
 	padding: 40px;
 	text-align: center;
-	background-color: black;
+	background-image: url(../../images/dragonart.jpg);
 	color: rgb(110, 103, 103);
 	font-weight: 300;
 	column-width: auto;
@@ -134,19 +120,56 @@ div.char-card:active {
 	font-size: 1.2rem;
 	max-width: 600px;
 	margin: auto;
-
 }
-
 
 .btn-primary {
-background-color: gray;
-border-color: black;
+	background-color: rgb(255, 0, 0);
+	border-color: black;
+	color: #fff;
 }
+
 .btn-primary:hover {
-
-	background-color: gray;
-
-
-
+	background-color: red;
 }
 
+.btn-primary:active {
+	color: red;
+	background-color: #161617;
+	border-color: #494F57;
+}
+
+.btn-primary:disabled {
+	color: red;
+	background-color: black;
+}
+.btn-primary:visited {
+	background: red;
+ }
+.char_class:hover,
+    select option:focus,
+    select option:active {
+        background: linear-gradient(#000000, #000000);
+        background-color: #000000 !important; /* for IE */
+        color: #ffed00 !important;
+    }
+
+   .char_class:checked {
+        background: linear-gradient(#d6d6d6, #d6d6d6);
+        background-color: #d6d6d6 !important; /* for IE */
+        color: #000000 !important;
+    }
+
+	 .char_race:hover,
+    select option:focus,
+    select option:active {
+        background: linear-gradient(#000000, #000000);
+        background-color: #000000 !important; /* for IE */
+        color: #ffed00 !important;
+    }
+
+   .char_race:checked {
+        background: linear-gradient(#d6d6d6, #d6d6d6);
+        background-color: #d6d6d6 !important; /* for IE */
+        color: #000000 !important;
+    }
+	 
