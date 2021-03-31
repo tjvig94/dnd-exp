@@ -29,4 +29,24 @@ router.get('/charactersheet', (req, res) => {
     res.render('charactersheet')
 });
 
+router.get('/character/:id', async (req, res) => {
+    //req.params.id
+    try {
+        const character = await Character.findByPk(req.params.id, {
+            attributes: ['id', 'name', 'stats', 'modifiers', 'skills', 'armourclass', 'initiative', 'speed', 'hitpoints', 'hitdice', 'equipment', 'proficiencies', 'languages', 'features', 'race', 'class'],
+            include: [{ model: User }]
+        })   
+        console.log(character.toJSON());
+
+        res.render('charactercreated', { character:character.toJSON() });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+
+
+
+
 module.exports = router;
