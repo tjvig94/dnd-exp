@@ -1,10 +1,10 @@
 
 var multiple = new Multiple({
     selector: '.item',
-    background: 'linear-gradient(grey, black)',
+    background: 'linear-gradient(black, grey)',
 });
 
 var multiple = new Multiple({
     selector: '.nameBox',
-    background: 'linear-gradient(grey, black)',
+    background: 'linear-gradient(black, grey)',
 });
