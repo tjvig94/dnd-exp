@@ -4,38 +4,66 @@ const { Character, User }  = require('../../models');
 const axios = require('axios').default;
 const dndApi = 'https://www.dnd5eapi.co/api';
 const CharacterCreator = require("../../lib/CharacterCreator");
+const Human = require('../../lib/Human');
+const Dwarf = require('../../lib/Dwarf');
+const Elf = require('../../lib/Elf');
 
 // Create new character, and add it to the database
 
 router.post('/', async (req, res) => {  
     try {
-
         const [classData, raceData] = await Promise.all([
             axios.get(`${dndApi}/classes/${req.body.charClass}`).then((res) => res.data),
             axios.get(`${dndApi}/races/${req.body.charRace}`).then((res) => res.data)
         ]);
 
-        const newChar = new CharacterCreator(
-            classData, 
-            raceData, 
-            req.body.charClass, 
-            req.body.charRace, 
-            req.body.charName
-            ).character;
+        const newChar = () => {
+            switch (req.body.charRace) {
+                case "human":
+                    return new Human(
+                        classData, 
+                        raceData, 
+                        req.body.charClass,
+                        req.body.charName, 
+                        req.body.charRace           
+                        ).character;
+                case "dwarf":
+                    return new Dwarf(
+                        classData, 
+                        raceData, 
+                        req.body.charClass,
+                        req.body.charName, 
+                        req.body.charRace           
+                        ).character;
+                case "elf":
+                    return new Elf(
+                        classData,
+                        raceData,
+                        req.body.charClass,
+                        req.body.charName,
+                        req.body.charRace
+                    ).character;
+                default:
+                    break;
+            }
+            return;
+        }
+        
+        const finChar = newChar();
             
         Character.create({
-            name: newChar.name,
-            race: newChar.race,
-            class: newChar.class,
-            stats: newChar.stats,
-            modifiers: newChar.modifiers,
-            skills: newChar.skills,
-            speed: newChar.speed,
-            hitdice: newChar.hit_die,
-            equipment: newChar.equipment,
-            proficiencies: newChar.proficiencies,
-            features: newChar.features,
-            languages: newChar.languages
+            name: finChar.name,
+            race: finChar.race,
+            class: finChar.class,
+            stats: finChar.stats,
+            modifiers: finChar.modifiers,
+            skills: finChar.skills,
+            speed: finChar.speed,
+            hitdice: finChar.hit_die,
+            equipment: finChar.equipment,
+            proficiencies: finChar.proficiencies,
+            features: finChar.features,
+            languages: finChar.languages
         })
         .then((character) => res.status(200).json(character));
 
@@ -70,9 +98,7 @@ router.get('/', async (req, res) => {
             attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })
-
         // TODO: Send page with all character data cards
-
         res.status(200).json(characterData);
     } catch (err) {
         res.status(500).json(err);
