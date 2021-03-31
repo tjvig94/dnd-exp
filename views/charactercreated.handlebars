@@ -33,8 +33,8 @@
     <div class="container">
       <div class="row general-info">
         <div class="item col-md-4 p-2 charName">Name: {{character.name}}</div>
-        <div class="item col-md-4 p-2 charRace">Race:</div>
-        <div class="item col-md-4 p-2 charClass">Class:</div>
+        <div class="item col-md-4 p-2 charRace">Race: {{character.race}}</div>
+        <div class="item col-md-4 p-2 charClass">Class: {{character.class}}</div>
       </div>
 
       <div class="row genStats">
@@ -77,3 +77,75 @@
 </div>
 <script src="/js/characterdata.js"></script>
 <script src="/assets/js/multiple.js"></script>
+
+
+{{!-- "character"."id" = '39';
+{
+  id: 39,
+  name: 'robert1',
+  stats: {
+    strength: 17,
+    dexterity: 13,
+    constitution: 12,
+    intelligence: 14,
+    wisdom: 8,
+    charisma: 12
+  },
+  modifiers: {
+    strength_mod: 1,
+    dexterity_mod: 0,
+    constitution_mod: -1,
+    intelligence_mod: 2,
+    wisdom_mod: 1,
+    charisma_mod: 2
+  },
+  skills: {
+    acrobatics: 0,
+    animal_handling: 1,
+    arcana: 2,
+    atheltics: 1,
+    deception: 2,
+    history: 2,
+    insight: 1,
+    intimidation: 2,
+    investigation: 2,
+    medicine: 1,
+    nature: 2,
+    perception: 1,
+    performance: 2,
+    persuasion: 2,
+    religion: 2,
+    sleight_of_hand: 0,
+    stealth: 0,
+    survival: 1
+  },
+  armourclass: null,
+  initiative: null,
+  speed: 25,
+  hitpoints: null,
+  hitdice: 12,
+  equipment: [ "Explorer's Pack", 'Javelin', 'Greataxe', 'Handaxe' ],
+  proficiencies: [
+    'Battleaxes',
+    'Handaxes',
+    'Light hammers',
+    'Warhammers',
+    'Light armor',
+    'Medium armor',
+    'Shields',
+    'Simple weapons',
+    'Martial weapons',
+    "Smith's tools"
+  ],
+  languages: [ 'Common', 'Dwarvish', '' ],
+  features: [
+    'Darkvision',
+    'Dwarven Resilience',
+    'Stonecunning',
+    'Dwarven Combat Training',
+    'Tool Proficiency'
+  ],
+  race: 'dwarf',
+  class: 'barbarian',
+  user: null
+} --}}
