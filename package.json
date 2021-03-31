@@ -29,6 +29,9 @@
     "express-handlebars": "^5.2.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "pg": "^8.5.1",
     "postgres": "^1.0.2",
     "sequelize": "^6.5.1"

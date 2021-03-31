@@ -1,15 +1,15 @@
 <div class="video-container">
   <video src="images/fire3.mp4" autoplay muted loop></video>
 </div>
-<div class="container content">
+<div class="container content mt-5">
   <div class="row">
     {{#each characters as |character| }}
     <div class="col">
-      <div class="card">
+      <div class="card mb-3">
         <div class="card-body char-card" data-id="{{character.id}}">
-          <h3>{{character.name}}</h3>
-          <p>{{character.race}}</p>
-          <p>{{character.class}}</p>
+          <h3 data-id="{{character.id}}">{{character.name}}</h3>
+          <p data-id="{{character.id}}">{{character.race}}</p>
+          <p data-id="{{character.id}}">{{character.class}}</p>
         </div>
       </div>
     </div>

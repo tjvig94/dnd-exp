@@ -32,8 +32,7 @@ $(document).ready(function(){
     });
 
     characterBtn.on('click', async (event) => {
-        event.preventDefault();
-        const id = event.target.getAttribute(parseInt('data-id'));
+        const id = event.target.getAttribute('data-id');
         const character = await $.get(`/api/characterGenerator/${id}`);
         console.log(character);
     });
