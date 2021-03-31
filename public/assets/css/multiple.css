@@ -1,0 +1,80 @@
+
+#logo {
+    width:40px;
+    height:40px;
+    margin-right: 2px;
+    margin-bottom: 3px;
+}
+#bg {
+    background-image: url(../images/login-bg.jpg);
+    background-size: contain, 100% no-repeat;
+    
+}
+.container {
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.row {
+    justify-content: center;
+}
+.col-md {
+    padding: 1rem;
+    border: 2px solid #fff;
+}
+
+.item {
+    font-size: 15px;
+    float: left;
+    color: whitesmoke;
+    background-image: linear-gradient(white, black);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+    padding-top: 20px;
+    width: 150px;
+    height: 150px;
+    opacity: 85%;
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+}
+
+.nameBox {
+    font-size: 15px;
+    float: left;
+    color:whitesmoke;
+    background-image: linear-gradient(white, black);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+    padding-top: 20px;
+    width: 300px;
+    height: 150px;
+    opacity: 85%;
+    font-family: 'Cormorant SC', serif;
+    text-align: center;
+}
+.classLogo {
+    width: 125px;
+    height: 125px;
+}
+.charName {
+    width: 15rem;
+}
+.subText {
+    opacity: .5;
+}
+.classRaceName {
+    font-size: 1vw;
+}
+
+.inputText {
+    font-size: 60px;
+}

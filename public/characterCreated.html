@@ -9,17 +9,22 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <!-- calling multiple.js -->
-        <link href="./multiple.css" rel="stylesheet">
+        <link href="./assets/css/multiple.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.min.js" integrity="sha512-h7sEAeLJrgSKuLDecT6NeHSUlbSwpS30IqGu21caM/sa//cWhp5J5D+MOZ0C5QM4GbJlZeEY1ZXXGVtI5m1arg==" crossorigin="anonymous"></script>        
         <!-- link to this pages css file -->
         <link href="./assets/css/charCreated.css">
         <!-- jquery call -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap" rel="stylesheet">
+    </head>
     <body id="bg">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="./index.html">DND Creator</a>
+                    <a href="./index.html">
+                  <img src="./assets/images/login-page.png" id="logo">
+                    </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -49,38 +54,238 @@
     
         <div class="container">
             <div class="row general-info">
-                <div class="item col-md-4 p-2 charName">Name:</div>
-                <div class="item col-md-4 p-2 charRace">Race:</div>
-                <div class="item col-md-4 p-2 charClass">Class:</div>
+                <div class="nameBox col-md-4 p-2 ">
+                    <div>
+                    <span class="charName classRaceName">Billiam Quincy</span>
+                    </div>
+                    <div>
+                        <span class="subText">Name</name>
+                    </div>
+                </div>
+                
+
+                <div class="item col-md-4 p-2">
+                    <div >
+                        <span class="charRace classRaceName">Orc of Exandria</span>
+                    </div>
+                    <div class="raceSubTextBox">
+                        <span class="subText">Race</span>
+                    </div>
+                </div>
+                <div class="item col-md-4 p-2">
+                    <div> 
+                        <span class="charClass classRaceName">Rogue</span>
+                    </div>
+                    <div> 
+                        <span class="subText">Class</span>
+                    </div>
+                </div>
+                <div class="item col-md-2 p-2"> <img src="./assets/images/Barbarian.png" class="classLogo"> </div>
+
             </div>
+                
+
 
             <div class="row genStats">
-                <div class="item col-md-2 p-2 strengthStat">Strength:</div>
-                <div class="item col-md-2 p-2 dexterityStat">Dexterity:</div>
-                <div class="item col-md-2 p-2 constStat">Constitution:</div>
-                <div class="item col-md-2 p-2 intStat">Intelligence:</div>
-                <div class="item col-md-2 p-2 wisStat">Wisdom:</div>
-                <div class="item col-md-2 p-2 charCharisma">Charisma:</div>
+                <div class="item col-md-2 p-2 strengthStat">
+                    <div>
+                        <span class="strengthStat inputText">15</span>
+                    </div>
+                    <div> 
+                        <span class="subText">Strength</span>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2">
+                    <div> 
+                        <div>
+                            <span class="dexterityStat inputText">7</span>
+                        </div>
+                        <div> 
+                            <span class="subText">Dexterity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item col-md-2 p-2">
+                    <div> 
+                        <div>
+                            <span class="constStat inputText">8</span>
+                        </div>
+                        <div> 
+                            <span class="subText">Constitution</span>
+                        </div>
+                </div>
             </div>
+
+                <div class="item col-md-2 p-2 intStat">
+
+                    <div>
+                        <span class="intStat inputText">10</span>
+                    </div>
+
+                    <div>
+                    <span class="subText">Intelligence</span>
+                    </div>
+
+                </div>
+
+                <div class="item col-md-2 p-2 wisStat">
+                    <div>
+                        <span class="wisStat inputText">-1</span>
+                    </div>
+                    <div> 
+                        <span class="subText">Wisdom</span>
+                    </div>
+                </div>
+
+            <div class="item col-md-2 p-2 ">
+                <div>
+                    <span class="charCharisma inputText">69</span>
+                </div>
+                <div>
+                    <span class="subText">Charisma</span>
+                </div>
+            </div>
+            </div>
+
             <div class="row genMods">
-                <div class="item col-md-2 p-2 strMod">Strength Mod:</div>
-                <div class="item col-md-2 p-2 dexMod">Dexterity Mod:</div>
-                <div class="item col-md-2 p-2 constMod">Constitution Mod:</div>
-                <div class="item col-md-2 p-2 intMod">Intelligence Mod:</div>
-                <div class="item col-md-2 p-2 widMod">Wisdom Mod:</div>
-                <div class="item col-md-2 p-2 charMod">Charisma Mod:</div>
+                <div class="item col-md-2 p-2 strMod">
+                    <div>
+                        <span class="strMod inputText">5</span>
+                    </div>
+                    <div>
+                        <span class="subText">Strength Mod </span>
+                    </div>
+                </div>
+                <div class="item col-md-2 p-2">
+                    <div>
+                        <span class="dexMod inputText">3</span>
+                    </div>
+                    <div>
+                        <span class="subText">Dexterity Mod</span>
+                    </div>
+                </div>
+                <div class="item col-md-2 p-2">
+                    <div>
+                        <span class="constMod inputText">5</span>
+                    </div>
+                    <div>
+                        <span class="subText">Constitution Mod</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-2 p-2">
+                    <div>
+                        <span class="intMod inputText">5</span>
+                    </div>
+                    <div>
+                        <span class="subText">Intelligence Mod</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-2 p-2">
+                    <div>
+                        <span class="wisMod inputText">5</span>
+                    </div>
+                    <div>
+                        <span class="subText">Wisdom Mod</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-2 p-2">
+                    <div>
+                        <span class="charMod inputText">5</span>
+                    </div>
+                    <div>
+                        <span class="subText">Charisma Mod</span>
+                    </div>
+                </div>
+                
             </div>
             <div class="row abilities">
-                <div class="item col-md-1 p-2 arcro">Acrobatics:</div>
-                <div class="item col-md-1 p-2 anHandling">Animal Handling:</div>
-                <div class="item col-md-1 p-2 arcana">Arcana:</div>
-                <div class="item col-md-1 p-2 athlet">Athletics:</div>
-                <div class="item col-md-1 p-2 decep">Deception:</div>
-                <div class="item col-md-1 p-2 history">History:</div>
-                <div class="item col-md-1 p-2 insight">Insight:</div>
-                <div class="item col-md-1 p-2 intimidate">Intimidation:</div>
-                <div class="item col-md-1 p-2 inves">Investigation:</div>
-                <div class="item col-md-1 p-2 medicine">Medicine:</div>
+                <div class="item col-md-1 p-2 arcro">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Acrobatics</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 anHandling">
+                <div>
+                </div>
+                <div>
+                    <span class="subText">Animal Handling</span>
+                </div>
+            </div>
+                
+                <div class="item col-md-1 p-2 arcana">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Arcana</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 athlet">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Athletics</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 decep">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Deception</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 history">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">History</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 insight">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Insight</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 intimidate">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Intimidation</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 inves">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Investigation</span>
+                    </div>
+                </div>
+                
+                <div class="item col-md-1 p-2 medicine">
+                    <div>
+                    </div>
+                    <div>
+                        <span class="subText">Medicine</span>
+                    </div>
+                </div>
+                
+        <div>
+        </div>
                 <div class="item col-md-1 p-2 nature">Nature:</div>
                 <div class="item col-md-1 p-2 religion">Religion:</div>
                 <div class="item col-md-1 p-2 sOH">Sleight of Hand:</div>
