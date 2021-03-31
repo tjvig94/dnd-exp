@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const passport = require('passport');
+const passport = require('passport-jwt');
 
 router.post('/register', async (req, res) => {
   try {
