@@ -1,0 +1,151 @@
+<div id="bg">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">DND Creator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Create</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Quick Access
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row general-info">
+        <div class="item col-md-4 p-2 charName">Name: {{character.name}}</div>
+        <div class="item col-md-4 p-2 charRace">Race: {{character.race}}</div>
+        <div class="item col-md-4 p-2 charClass">Class: {{character.class}}</div>
+      </div>
+
+      <div class="row genStats">
+        <div class="item col-md-2 p-2 strengthStat">Strength: {{character.stats.strength}}</div>
+        <div class="item col-md-2 p-2 dexterityStat">Dexterity: {{character.stats.dexterity}}</div>
+        <div class="item col-md-2 p-2 constStat">Constitution: {{character.stats.constitution}}</div>
+        <div class="item col-md-2 p-2 intStat">Intelligence: {{character.stats.intelligence}}</div>
+        <div class="item col-md-2 p-2 wisStat">Wisdom: {{character.stats.wisdom}}</div>
+        <div class="item col-md-2 p-2 charCharisma">Charisma: {{character.stats.charisma}}</div>
+      </div>
+      <div class="row genMods">
+        <div class="item col-md-2 p-2 strMod">Strength Mod: {{character.modifiers.strength_mod}}</div>
+        <div class="item col-md-2 p-2 dexMod">Dexterity Mod: {{character.modifiers.dexterity_mod}}</div>
+        <div class="item col-md-2 p-2 constMod">Constitution Mod: {{character.modifiers.constitution_mod}}</div>
+        <div class="item col-md-2 p-2 intMod">Intelligence Mod: {{character.modifiers.intelligence_mod}}</div>
+        <div class="item col-md-2 p-2 widMod">Wisdom Mod: {{character.modifiers.wisdom_mod}}</div>
+        <div class="item col-md-2 p-2 charMod">Charisma Mod: {{character.modifiers.charisma_mod}}</div>
+      </div>
+      <div class="row abilities">
+        <div class="item col-md-1 p-2 arcro">Acrobatics: {{character.skills.acrobatics}}</div>
+        <div class="item col-md-1 p-2 anHandling">Animal Handling: {{character.skills.animal_handling}}</div>
+        <div class="item col-md-1 p-2 arcana">Arcana: {{character.skills.arcana}}</div>
+        <div class="item col-md-1 p-2 athlet">Athletics: {{character.skills.atheltics}}</div>
+        <div class="item col-md-1 p-2 decep">Deception: {{character.skills.deception}}</div>
+        <div class="item col-md-1 p-2 history">History: {{character.skills.history}}</div>
+        <div class="item col-md-1 p-2 insight">Insight: {{character.skills.insight}}</div>
+        <div class="item col-md-1 p-2 intimidate">Intimidation: {{character.skills.intimidation}}</div>
+        <div class="item col-md-1 p-2 inves">Investigation: {{character.skills.investigation}}</div>
+        <div class="item col-md-1 p-2 medicine">Medicine: {{character.skills.medicine}}</div>
+        <div class="item col-md-1 p-2 nature">Nature: {{character.skills.nature}}</div>
+        <div class="item col-md-1 p-2 religion">Religion: {{character.skills.religion}}</div>
+        <div class="item col-md-1 p-2 sOH">Sleight of Hand: {{character.skills.sleight_of_hand}}</div>
+        <div class="item col-md-1 p-2 stealth">Stealth: {{character.skills.stealth}}</div>
+        <div class="item col-md-1 p-2 survival">Survival: {{character.skills.survival}}</div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<script src="/js/characterdata.js"></script>
+<script src="/assets/js/multiple.js"></script>
+
+
+{{!-- "character"."id" = '39';
+{
+  id: 39,
+  name: 'robert1',
+  stats: {
+    strength: 17,
+    dexterity: 13,
+    constitution: 12,
+    intelligence: 14,
+    wisdom: 8,
+    charisma: 12
+  },
+  modifiers: {
+    strength_mod: 1,
+    dexterity_mod: 0,
+    constitution_mod: -1,
+    intelligence_mod: 2,
+    wisdom_mod: 1,
+    charisma_mod: 2
+  },
+  skills: {
+    acrobatics: 0,
+    animal_handling: 1,
+    arcana: 2,
+    atheltics: 1,
+    deception: 2,
+    history: 2,
+    insight: 1,
+    intimidation: 2,
+    investigation: 2,
+    medicine: 1,
+    nature: 2,
+    perception: 1,
+    performance: 2,
+    persuasion: 2,
+    religion: 2,
+    sleight_of_hand: 0,
+    stealth: 0,
+    survival: 1
+  },
+  armourclass: null,
+  initiative: null,
+  speed: 25,
+  hitpoints: null,
+  hitdice: 12,
+  equipment: [ "Explorer's Pack", 'Javelin', 'Greataxe', 'Handaxe' ],
+  proficiencies: [
+    'Battleaxes',
+    'Handaxes',
+    'Light hammers',
+    'Warhammers',
+    'Light armor',
+    'Medium armor',
+    'Shields',
+    'Simple weapons',
+    'Martial weapons',
+    "Smith's tools"
+  ],
+  languages: [ 'Common', 'Dwarvish', '' ],
+  features: [
+    'Darkvision',
+    'Dwarven Resilience',
+    'Stonecunning',
+    'Dwarven Combat Training',
+    'Tool Proficiency'
+  ],
+  race: 'dwarf',
+  class: 'barbarian',
+  user: null
+} --}}

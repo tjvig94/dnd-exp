@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    let resData = "";
     const generateBtn = $('.generate');
     const viewCharactersBtn = $('.view-char');
     const characterBtn = $('.char-card');
@@ -23,9 +23,12 @@ $(document).ready(function(){
             console.log("All fields must be entered");
         } else {
             $.post('/api/characterGenerator', userData).then(response => {
+                //load the characterCreated.html 
                 console.log(response);
+                document.location.replace('/character/' + response.id);
             })
         }        
+        
     });
 
     characterBtn.on('click', async (event) => {
@@ -34,3 +37,14 @@ $(document).ready(function(){
         console.log(character);
     });
 });
+
+
+// response.equipment.forEach(element => console.log(element));
+                // response.languages.forEach(element => console.log(element));
+                // console.log(response.modifiers.strength_mod);
+                // console.log(response.modifiers.dexterity_mod);
+                // console.log(response.modifiers.constitution_mod);
+                // console.log(response.modifiers.intelligence_mod);
+                // console.log(response.modifiers.wisdom_mod);
+                // response.proficiencies.forEach(element => console.log(element));
+                // console.log(response.skills);
