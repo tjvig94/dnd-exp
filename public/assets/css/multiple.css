@@ -27,7 +27,13 @@
     padding: 1rem;
     border: 2px solid #fff;
 }
-
+img, .amImg{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin-right: 10%;
+    float: left;
+  }
 .item {
     font-size: 15px;
     float: left;
@@ -58,7 +64,7 @@
     justify-content: center;
     margin: 5px;
     padding-top: 20px;
-    width: 300px;
+    width: 500px;
     height: 150px;
     opacity: 85%;
     font-family: 'Cormorant SC', serif;
