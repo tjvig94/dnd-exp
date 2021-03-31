@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const passport = require('passport')
+const passport = require('passport-jwt')
 
 require('./config/passport')
 

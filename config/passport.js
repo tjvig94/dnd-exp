@@ -2,6 +2,7 @@
 const bcrypt = require('bcrypt');
 const Sequelize = require('sequelize')
 const jwtSecret = require('./jwtConfig')
+const passportJWT = require('passport-jwt')
 
 const BCRYPT_SALT_ROUNDS = 12;
 const Op = Sequelize.Op;
