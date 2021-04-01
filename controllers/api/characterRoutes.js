@@ -75,7 +75,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
         console.log(err);
     }
-})
+});
 
 // Get one character
 
@@ -110,7 +110,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 router.delete('/:id', async (req, res) => {
     try {
@@ -123,6 +123,6 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 module.exports = router;
