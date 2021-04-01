@@ -120,3 +120,30 @@ img, .amImg{
   .otherBoxes {
       width: 400px;
   }
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    justify-content: center;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 3px solid white;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+	@media (max-width: 992px) {
+		.classRaceName {
+            font-size: 20px;
+        }
+	}
