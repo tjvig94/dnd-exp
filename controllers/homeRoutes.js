@@ -30,7 +30,7 @@ router.get('/characterselect', async (req, res) => {
 });
 
 router.get('/charactersheet', (req, res) => {
-    res.render('charactersheet')
+    res.render('charactercreated')
 });
 
 router.get('/character/:id', async (req, res) => {
