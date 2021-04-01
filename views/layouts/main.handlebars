@@ -48,13 +48,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/characterselect">My Characters</a>
                     </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" id="logout" href="/login">Logout</a>
+                    </li>
+                   
                 </ul>
             </div>
         </div>
     </nav>
 
     {{{ body }}}
-
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="../../public/js/logout.js"></script>
+    {{/if}}
     <script src="./js/characterdata.js"></script>
 </body>
 
