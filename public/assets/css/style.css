@@ -161,6 +161,7 @@ div.characterItem:active {
 .btn-primary:visited {
 	background: red;
  }
+
 .char_class:hover,
     select option:focus,
     select option:active {
@@ -189,3 +190,11 @@ div.characterItem:active {
         color: #000000 !important;
     }
 	 
+
+	
+	@media (max-width: 767px) {
+		.video-container {
+			background: url('../../images/dragonart.jpg');
+			background-size: cover;
+		}
+	}
