@@ -1,3 +1,5 @@
+// const { response } = require("express");
+
 $(document).ready(function(){
     let resData = "";
     const generateBtn = $('.generate');
@@ -33,8 +35,8 @@ $(document).ready(function(){
 
     characterBtn.on('click', async (event) => {
         const id = event.target.getAttribute('data-id');
-        const character = await $.get(`/api/characterGenerator/${id}`);
-        console.log(character);
+        const character = await $.get(`/character/${id}`);
+        document.location.replace(`/character/${id}`);
     });
 });
 

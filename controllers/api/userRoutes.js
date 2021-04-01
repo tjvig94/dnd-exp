@@ -45,8 +45,6 @@ router.post('/register', (req, res, next) => {
     (req, res, next);
 });
 
-
-
 router.post('/login', (req, res, next) => {
   passport.authenticate('login', (err, users, info) => {
     if (err) {
@@ -79,7 +77,6 @@ router.post('/login', (req, res, next) => {
     }
   })(req, res, next);
 });
-
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {

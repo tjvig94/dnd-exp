@@ -10,6 +10,10 @@ router.get('/', (req, res) => {
     
 });
 
+router.get('/login', (req, res) => {
+    res.render('login');
+})
+
 router.get('/characterselect', async (req, res) => {
     try {
         const characterData = await Character.findAll({
@@ -26,7 +30,7 @@ router.get('/characterselect', async (req, res) => {
 });
 
 router.get('/charactersheet', (req, res) => {
-    res.render('charactersheet')
+    res.render('charactercreated')
 });
 
 router.get('/character/:id', async (req, res) => {
