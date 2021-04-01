@@ -1,19 +1,21 @@
 const router = require('express').Router();
 const { User, Character } = require('../models');
-const withAuth = require('../utils/auth');
+const auth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-    res.render('homepage');
-    
+router.get('/', auth.withAuth, (req, res) => {
+    res.render('homepage');   
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', auth.notAuth, (req, res) => {
     res.render('login');
 })
 
 router.get('/characterselect', async (req, res) => {
     try {
         const characterData = await Character.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
             attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })

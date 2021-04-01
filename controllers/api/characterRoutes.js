@@ -6,6 +6,7 @@ const dndApi = 'https://www.dnd5eapi.co/api';
 const Human = require('../../lib/Human');
 const Dwarf = require('../../lib/Dwarf');
 const Elf = require('../../lib/Elf');
+const session = require('express-session');
 
 // Create new character, and add it to the database
 
@@ -66,6 +67,7 @@ router.post('/', async (req, res) => {
             proficiencies: finChar.proficiencies,
             features: finChar.features,
             languages: finChar.languages,
+            user_id: req.session.user_id
         })
         .then((character) => res.status(200).json(character));
 
@@ -73,7 +75,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
         console.log(err);
     }
-})
+});
 
 // Get one character
 
@@ -97,6 +99,9 @@ router.get('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const characterData = await Character.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
             attributes: ['id', 'name', 'race', 'class'],
             include: [{ model: User }]
         })
@@ -105,7 +110,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 router.delete('/:id', async (req, res) => {
     try {
@@ -118,6 +123,6 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
 module.exports = router;
