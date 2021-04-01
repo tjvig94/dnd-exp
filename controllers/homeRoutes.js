@@ -3,9 +3,6 @@ const { User, Character } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    // if not logged in:
-    // res.render('login')
-    // otherwise...
     res.render('homepage');
     
 });

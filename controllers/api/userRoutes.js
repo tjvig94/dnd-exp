@@ -50,6 +50,7 @@ router.post('/login', (req, res, next) => {
     if (err) {
       console.error(`error ${err}`);
     }
+
     if (info !== undefined) {
       console.error(info.message);
       if (info.message === 'incorrect email or password, please try again.') {
@@ -64,12 +65,14 @@ router.post('/login', (req, res, next) => {
             email: req.body.email,
           },
         }).then(user => {
+          const id = user.id;
           const token = jwt.sign({ id: user.id }, jwtSecret.secret, {
             expiresIn: 60 * 60,
           });
           res.status(200).send({
             auth: true,
             token,
+            id,
             message: 'user found & logged in',
           });
         });
@@ -82,7 +85,7 @@ router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
-    });
+    }); 
   } else {
     res.status(404).end();
   }
