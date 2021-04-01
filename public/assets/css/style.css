@@ -17,6 +17,10 @@ a {
 	color: var(--primary-color);
 }
 
+p {
+	font-size: 15px;
+}
+
 h1 {
 	font-weight: 600;
 	font-size: 80px;
@@ -99,21 +103,21 @@ h4 {
 } */
 
 .item {
-    font-size: 15px;
-    float: left;
-    color: white;
-    background-clip: padding-box;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    margin: 5px;
-    padding-top: 20px;
-    width: 18rem;
-    height: 150px;
-    opacity: 75%;
-    font-family: 'Cormorant SC', serif;
+	font-size: 15px;
+	float: left;
+	color: white;
+	background-clip: padding-box;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
+	justify-content: center;
+	margin: 5px;
+	padding-top: 20px;
+	width: 300px;
+	height: 150px;
+	opacity: 75%;
+	font-family: 'Cormorant SC', serif;
 }
 
 div.char-card:hover {
@@ -130,10 +134,11 @@ div.char-card:active {
 #create {
 	padding: 40px;
 	text-align: center;
-	background-image: url(../../images/dragonart.jpg);
+	background: url(../../images/dragonart.jpg) no-repeat;
 	color: rgb(110, 103, 103);
 	font-weight: 300;
 	column-width: auto;
+	background-size:cover;
 }
 
 #create p {
@@ -162,34 +167,46 @@ div.char-card:active {
 	color: red;
 	background-color: black;
 }
+
 .btn-primary:visited {
 	background: red;
- }
-.char_class:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        background-color: #000000 !important; /* for IE */
-        color: #ffed00 !important;
-    }
+}
 
-   .char_class:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        background-color: #d6d6d6 !important; /* for IE */
-        color: #000000 !important;
-    }
+.feature, .language, .equip {
+	font-size: 20px;
+}
 
-	 .char_race:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        background-color: #000000 !important; /* for IE */
-        color: #ffed00 !important;
-    }
+.char_class:hover, select option:focus, select option:active {
+	background: linear-gradient(#000000, #000000);
+	background-color: #000000 !important;
+	/* for IE */
+	color: #ffed00 !important;
+}
 
-   .char_race:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        background-color: #d6d6d6 !important; /* for IE */
-        color: #000000 !important;
-    }
-	 
+.char_class:checked {
+	background: linear-gradient(#d6d6d6, #d6d6d6);
+	background-color: #d6d6d6 !important;
+	/* for IE */
+	color: #000000 !important;
+}
+
+.char_race:hover, select option:focus, select option:active {
+	background: linear-gradient(#000000, #000000);
+	background-color: #000000 !important;
+	/* for IE */
+	color: #ffed00 !important;
+}
+
+.char_race:checked {
+	background: linear-gradient(#d6d6d6, #d6d6d6);
+	background-color: #d6d6d6 !important;
+	/* for IE */
+	color: #000000 !important;
+}
+
+@media (max-width: 767px) {
+	.video-container {
+		background: url('../../images/dragonart.jpg');
+		background-size: cover;
+	}
+}
