@@ -15,6 +15,10 @@ a {
 	color: var(--primary-color);
 }
 
+p {
+	font-size: 15px;
+}
+
 h1 {
 	font-weight: 600;
 	font-size: 80px;
@@ -36,6 +40,7 @@ h4 {
 	color: #fff;
 	padding: 0 20px;
 }
+
 
 .video-container {
 	position: absolute;
@@ -108,7 +113,7 @@ h4 {
     justify-content: center;
     margin: 5px;
     padding-top: 20px;
-    width: 18rem;
+    width: 300px;
     height: 150px;
     opacity: 75%;
     font-family: 'Cormorant SC', serif;
@@ -163,6 +168,11 @@ div.char-card:active {
 .btn-primary:visited {
 	background: red;
  }
+
+.feature, .language, .equip {
+	font-size: 20px;
+}
+
 .char_class:hover,
     select option:focus,
     select option:active {
