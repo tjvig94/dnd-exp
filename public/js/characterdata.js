@@ -4,7 +4,7 @@ $(document).ready(function(){
     let resData = "";
     const generateBtn = $('.generate');
     const viewCharactersBtn = $('.view-char');
-    const characterBtn = $('.char-card');
+    const characterBtn = $('.item');
 
     viewCharactersBtn.on('click', async (event) => {
         event.preventDefault();
