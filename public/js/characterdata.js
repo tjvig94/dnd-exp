@@ -1,15 +1,15 @@
 // const { response } = require("express");
 
-$(document).ready(function(){
+$(document).ready(function () {
     let resData = "";
     const generateBtn = $('.generate');
     const viewCharactersBtn = $('.view-char');
-    const characterBtn = $('.item');
+    const characterBtn = $('.characterItem');
 
     viewCharactersBtn.on('click', async (event) => {
         event.preventDefault();
         const response = await $.get('/characterselect');
-        (response) ? document.location.replace('/characterselect') : "";        
+        (response) ? document.location.replace('/characterselect') : "";
     });
 
     generateBtn.on('click', (event) => {
@@ -29,8 +29,8 @@ $(document).ready(function(){
                 console.log(response);
                 document.location.replace('/character/' + response.id);
             })
-        }        
-        
+        }
+
     });
 
     characterBtn.on('click', async (event) => {
