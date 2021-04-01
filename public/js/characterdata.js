@@ -5,6 +5,7 @@ $(document).ready(function () {
     const generateBtn = $('.generate');
     const viewCharactersBtn = $('.view-char');
     const characterBtn = $('.characterItem');
+    const deleteChar = $('.fas');
 
     viewCharactersBtn.on('click', async (event) => {
         event.preventDefault();
@@ -38,6 +39,15 @@ $(document).ready(function () {
         const character = await $.get(`/character/${id}`);
         document.location.replace(`/character/${id}`);
     });
+
+    deleteChar.on('click', async (event) => {
+        const id = event.target.parentElement.parentElement.parentElement.getAttribute('data-id');
+        console.log(id);
+        console.log($);
+        const character = await $.delete(`/character/${id}`);
+        document.location.replace(`/`);
+    });
+
 });
 
 
