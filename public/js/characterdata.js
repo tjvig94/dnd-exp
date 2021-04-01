@@ -35,8 +35,8 @@ $(document).ready(function(){
 
     characterBtn.on('click', async (event) => {
         const id = event.target.getAttribute('data-id');
-        const character = await $.get(`/api/characterGenerator/${id}`);
-        (character) ? document.location.replace('/charactersheet') : alert("Server Error. Sorry!");
+        const character = await $.get(`/character/${id}`);
+        document.location.replace(`/character/${id}`);
     });
 });
 
