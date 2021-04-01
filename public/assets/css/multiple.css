@@ -23,10 +23,7 @@
     width: 99%;
     justify-content: center;
 }
-.col-md {
-    padding: 1rem;
-    border: 2px solid #fff;
-}
+
 img, .amImg{
     height: 130px;
     width: 130px;
@@ -75,10 +72,10 @@ img, .amImg{
     background-image: url(../images/team.jpg);
     background-size: 65%;
 } */
-.classLogo {
+/* .classLogo {
     width: 125px;
     height: 125px;
-}
+} */
 .charName {
     width: 15rem;
 }
@@ -104,7 +101,7 @@ img, .amImg{
     visibility: hidden;
     width: 200px;
     background-color: black;
-    color: rgb(182, 73, 73);
+    color: white;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;

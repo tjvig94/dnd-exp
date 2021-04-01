@@ -90,10 +90,28 @@ h4 {
 	font-weight: 600;
 }
 
-.card {
+/* .card {
 	width: 18rem;
 	color: white;
 	background-image: linear-gradient(grey, black);
+} */
+
+.item {
+    font-size: 15px;
+    float: left;
+    color: white;
+    background-clip: padding-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    margin: 5px;
+    padding-top: 20px;
+    width: 18rem;
+    height: 150px;
+    opacity: 75%;
+    font-family: 'Cormorant SC', serif;
 }
 
 div.char-card:hover {
