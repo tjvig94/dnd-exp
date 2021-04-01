@@ -10,7 +10,7 @@ router.get('/login', auth.notAuth, (req, res) => {
     res.render('login');
 })
 
-router.get('/characterselect', async (req, res) => {
+router.get('/characterselect', auth.withAuth, async (req, res) => {
     try {
         const characterData = await Character.findAll({
             where: {
@@ -28,11 +28,11 @@ router.get('/characterselect', async (req, res) => {
     }
 });
 
-router.get('/charactersheet', (req, res) => {
+router.get('/charactersheet', auth.withAuth, (req, res) => {
     res.render('charactercreated')
 });
 
-router.get('/character/:id', async (req, res) => {
+router.get('/character/:id', auth.withAuth, async (req, res) => {
     //req.params.id
     try {
         const character = await Character.findByPk(req.params.id, {
