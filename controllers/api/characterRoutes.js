@@ -65,7 +65,7 @@ router.post('/', async (req, res) => {
             equipment: finChar.equipment,
             proficiencies: finChar.proficiencies,
             features: finChar.features,
-            languages: finChar.languages
+            languages: finChar.languages,
         })
         .then((character) => res.status(200).json(character));
 

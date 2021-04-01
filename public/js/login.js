@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
     if (email && password) {
       // Send a POST request to the API endpoint
       const response = await $.post('/api/users/login', { email, password });
-      (response) ? document.location.replace('/') : alert("Server Error. Sorry!");  
+      document.location.replace('/');  
     }
   };
   
