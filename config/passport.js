@@ -17,12 +17,12 @@ passport.use(
     'register',
     new LocalStrategy(
         {
-            usernameField: 'email',
+            usernameField: 'name',
             passwordField: 'password',
             passReqToCallback: true,
             session: false,
         },
-        (req, email, password, done) => {
+        (req, name, password, done) => {
             console.log(name);
             console.log(req.body.email);
 
@@ -67,10 +67,11 @@ passport.use(
     new LocalStrategy(
         {
             usernameField: 'email',
+            emailField: 'email',
             passwordField: 'password',
             session: false,
         },
-        (email , password, done) => {
+        (email, password, done) => {
             try {
                 User.findOne({
                     where: {
