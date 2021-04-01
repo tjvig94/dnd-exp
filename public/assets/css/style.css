@@ -132,7 +132,7 @@ div.char-card:active {
 #create {
 	padding: 40px;
 	text-align: center;
-	background: url(../../images/dragonart.jpg) no-repeat center center fixed;
+	background: url(../../images/dragonart.jpg) no-repeat;
 	color: rgb(110, 103, 103);
 	font-weight: 300;
 	column-width: auto;
