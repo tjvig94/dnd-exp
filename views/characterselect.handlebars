@@ -5,19 +5,17 @@
   <div class="row">
     {{#each characters as |character| }}
 
-
     <div class="characterItem" data-id="{{character.id}}">
       <i class="fas fa-trash-alt"></i>
       <h3 data-id="{{character.id}}">{{character.name}}</h3>
-
       <p data-id="{{character.id}}">{{character.race}}</p>
       <p data-id="{{character.id}}">{{character.class}}</p>
-
     </div>
 
 
     {{/each}}
   </div>
 </div>
+
 
 <script src="assets/js/multiple.js"></script>

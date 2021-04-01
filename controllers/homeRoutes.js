@@ -3,12 +3,13 @@ const { User, Character } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-    // if not logged in:
-    // res.render('login')
-    // otherwise...
     res.render('homepage');
     
 });
+
+router.get('/login', (req, res) => {
+    res.render('login');
+})
 
 router.get('/characterselect', async (req, res) => {
     try {
@@ -26,7 +27,7 @@ router.get('/characterselect', async (req, res) => {
 });
 
 router.get('/charactersheet', (req, res) => {
-    res.render('charactersheet')
+    res.render('charactercreated')
 });
 
 router.get('/character/:id', async (req, res) => {

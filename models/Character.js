@@ -17,15 +17,9 @@ Character.init(
         },
         race: {
             type: DataTypes.STRING,
-            // allowNull: false,
-            // references: { model: 'race', key: 'id' }
-
         },
         class: {
             type: DataTypes.STRING,
-            // allowNull: false,
-            // references: { model: 'class', key: 'id' }
-
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -69,6 +63,13 @@ Character.init(
         },
         languages: {
             type: DataTypes.ARRAY(DataTypes.STRING)
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
