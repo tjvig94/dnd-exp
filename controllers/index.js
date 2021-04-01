@@ -5,9 +5,9 @@ const homeRoutes = require('./homeRoutes')
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 
-router.use((req,res) => {
+router.use((req, res) => {
     res.send('<h1>Route Not Found</h1>')
 });
 
-module.exports = router; 
+module.exports = router;
 

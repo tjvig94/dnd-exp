@@ -9,7 +9,9 @@ body {
 	font-family: 'Cormorant', sans-serif;
 	line-height: 1.5;
 }
-
+nav {
+	z-index: 2;
+}
 a {
 	text-decoration: none;
 	color: var(--primary-color);

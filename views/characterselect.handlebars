@@ -5,16 +5,24 @@
   <div class="row">
     {{#each characters as |character| }}
     <div class="col">
+
+
+      <div class="item" data-id="{{character.id}}">
+        <h3 data-id="{{character.id}}">{{character.name}}</h3>
+        <p data-id="{{character.id}}">{{character.race}}</p>
+        <p data-id="{{character.id}}">{{character.class}}</p>
+      </div>
+
+
       
-        <div class="item" data-id="{{character.id}}">
-          <h3 data-id="{{character.id}}">{{character.name}}</h3>
-          <p data-id="{{character.id}}">{{character.race}}</p>
-          <p data-id="{{character.id}}">{{character.class}}</p>
-        </div>
-      
+
+
     </div>
     {{/each}}
   </div>
 </div>
 
+
 <script src="assets/js/multiple.js"></script>
+
+
