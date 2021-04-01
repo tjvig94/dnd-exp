@@ -4,15 +4,18 @@
 <div class="container content mt-5">
   <div class="row">
     {{#each characters as |character| }}
-    <div class="col">
 
-      <div class="item" data-id="{{character.id}}">
-        <h3 data-id="{{character.id}}">{{character.name}}</h3>
-        <p data-id="{{character.id}}">{{character.race}}</p>
-        <p data-id="{{character.id}}">{{character.class}}</p>
-      </div>
+
+    <div class="characterItem" data-id="{{character.id}}">
+      <i class="fas fa-trash-alt"></i>
+      <h3 data-id="{{character.id}}">{{character.name}}</h3>
+
+      <p data-id="{{character.id}}">{{character.race}}</p>
+      <p data-id="{{character.id}}">{{character.class}}</p>
 
     </div>
+
+
     {{/each}}
   </div>
 </div>

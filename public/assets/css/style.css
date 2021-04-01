@@ -28,7 +28,9 @@ h1 {
 h4 {
 	font-size: 100px;
 }
-
+.fa-trash-alt {
+	float: right;
+}
 .showcase {
 	height: 100vh;
 	display: flex;
@@ -92,13 +94,7 @@ h4 {
 	font-weight: 600;
 }
 
-/* .card {
-	width: 18rem;
-	color: white;
-	background-image: linear-gradient(grey, black);
-} */
-
-.item {
+.characterItem {
     font-size: 15px;
     float: left;
     color: white;
@@ -116,13 +112,13 @@ h4 {
     font-family: 'Cormorant SC', serif;
 }
 
-div.char-card:hover {
+div.characterItem:hover {
 	/* background-color: beige; */
 	background-image: linear-gradient(black, grey);
 	cursor: pointer;
 }
 
-div.char-card:active {
+div.characterItem:active {
 	background-color: bisque;
 	cursor: pointer;
 }
@@ -140,7 +136,7 @@ div.char-card:active {
 	font-size: 1.2rem;
 	max-width: 600px;
 	margin: auto;
-}
+    font-family: 'Cormorant SC', serif;}
 
 .btn-primary {
 	background-color: rgb(255, 0, 0);

@@ -8,3 +8,8 @@ var multiple = new Multiple({
     selector: '.nameBox',
     background: 'linear-gradient(black, grey)',
 });
+
+var multiple = new Multiple({
+    selector: '.characterItem',
+    background: 'linear-gradient(black, grey)',
+});
