@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err)
     }
 });
-router.put('/:id', async (req, res) => {
+router.put('/:id', (req, res) => {
     Feature.update(req.body, {
         where: {
             id: req.params.id

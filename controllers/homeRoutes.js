@@ -12,7 +12,9 @@ router.get('/login', auth.notAuth, (req, res) => {
     res.render('login');
 })
 
+
 // some sort of need to be logged in to continue - cc
+
 router.get('/characterselect', auth.withAuth, async (req, res) => {
     try {
         console.log(req.session)
@@ -35,13 +37,13 @@ router.get('/characterselect', auth.withAuth, async (req, res) => {
     }
 });
 
-router.get('/charactersheet', (req, res) => {
-    res.render('charactercreated', {
-        logged_in: true,
-    })
+
+router.get('/charactersheet', auth.withAuth, (req, res) => {
+    res.render('charactercreated')
+
 });
 
-router.get('/character/:id', async (req, res) => {
+router.get('/character/:id', auth.withAuth, async (req, res) => {
     //req.params.id
     try {
         const character = await Character.findByPk(req.params.id, {
@@ -58,10 +60,5 @@ router.get('/character/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
-
-
-
 
 module.exports = router;

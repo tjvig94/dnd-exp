@@ -7,9 +7,14 @@ $(document).ready(function () {
     const characterBtn = $('.characterItem');
 
     viewCharactersBtn.on('click', async (event) => {
-        event.preventDefault();
-        const response = await $.get('/characterselect');
-        (response) ? document.location.replace('/characterselect') : "";
+        try {
+            event.preventDefault();
+            const response = await $.get('/characterselect');
+            (response) ? document.location.replace('/characterselect') : "";
+        } catch {
+            alert("Failed to load characters. Sorry! Try again later.")
+        }
+        
     });
 
     generateBtn.on('click', (event) => {
@@ -34,9 +39,13 @@ $(document).ready(function () {
     });
 
     characterBtn.on('click', async (event) => {
-        const id = event.target.getAttribute('data-id');
-        const character = await $.get(`/character/${id}`);
-        document.location.replace(`/character/${id}`);
+        try {
+            const id = event.target.getAttribute('data-id');
+            const character = await $.get(`/character/${id}`);
+            document.location.replace(`/character/${id}`);
+        } catch {
+            alert("Failed to load character sheet. Sorry! Try again later.")
+        }        
     });
 });
 
