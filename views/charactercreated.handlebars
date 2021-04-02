@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="row general-info">
-
+      <div class="separator">Character Info</div>
       <div class="nameBox col-md-4 p-2 ">
         <img class="amImg" src="/characterProfPic.jpg" alt="characterImg">
         <div>
@@ -12,8 +12,6 @@
           <span class="subText">Name</name>
         </div>
       </div>
-
-
       <div class="item col-md-4 p-2">
         <div>
           <span class="charRace classRaceName">{{ character.race}}</span>
@@ -30,11 +28,60 @@
           <span class="subText">Class</span>
         </div>
       </div>
-      <!-- <div class="item col-md-2 p-2"> <img src="./assets/images/Barbarian.png" class="classLogo"> </div> -->
-
     </div>
 
+    <div class="row">
+      <div class="item col-md-2 p-2 tooltip">
+        <span class="tooltiptext">Hit points, commonly abbreviated HP, are a number measuring the amount of damage a
+          creature, character, or object can take before being killed, disabled or destroyed.</span>
+        <div>
+          <span class="hitPoints inputText">{{character.hitpoints}}</span>
+        </div>
+        <div>
+          <span class="subText">HP</span>
+        </div>
+      </div>
 
+      <div class="item col-md-2 p-2 tooltip">
+        <span class="tooltiptext">Armor Class (AC): Armor protects its wearer from attacks. The armor (and shield) you
+          wear determines your base Armor Class.</span>
+        <div>
+          <div>
+            <span class="armorClass inputText">{{character.armourclass}}</span>
+          </div>
+          <div>
+            <span class="subText">Armor Class</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="item col-md-2 p-2 tooltip">
+        <span class="tooltiptext"></span>
+        <div>
+          <div>
+            <span class="attack inputText">{{character.hitdice}}</span>
+          </div>
+          <div>
+            <span class="subText">Hit Dice</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="item col-md-2 p-2 tooltip">
+        <span class="tooltiptext">Every character and monster has a speed, which is the distance in feet that the
+          character or monster can walk in 1 round. This number assumes short bursts of energetic movement in the midst
+          of a life- threatening situation.
+          The following rules determine how far a character or monster can move in a minute, an hour, or a day.</span>
+        <div>
+          <span class="speed inputText">{{character.speed}}</span>
+        </div>
+        <div>
+          <span class="subText">Speed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="separator">General Stats</div>
 
     <div class="row genStats">
       <div class="item col-md-2 p-2 tooltip">
@@ -121,6 +168,7 @@
       </div>
     </div>
 
+    <div class="separator">Mods</div>
     <div class="row genMods">
       <div class="item col-md-2 p-2">
 
@@ -179,6 +227,8 @@
       </div>
 
     </div>
+
+    <div class="separator">Skills</div>
 
     <div class="row abilities">
       <div class="item col-md-1 p-2 tooltip">
@@ -371,6 +421,9 @@
       </div>
     </div>
     <div class="row others">
+
+      <hr class="rounded">
+      <div class="separator">Others</div>
 
       <div class="item otherBoxes col-md-3 p-2 ">
         <div>
