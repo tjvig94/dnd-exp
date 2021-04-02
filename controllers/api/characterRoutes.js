@@ -7,6 +7,7 @@ const Human = require('../../lib/Human');
 const Dwarf = require('../../lib/Dwarf');
 const Elf = require('../../lib/Elf');
 const session = require('express-session');
+const auth = require('../../utils/auth');
 
 // Create new character, and add it to the database
 
