@@ -47,9 +47,4 @@ router.get('/character/:id', auth.withAuth, async (req, res) => {
     }
 });
 
-
-
-
-
-
 module.exports = router;
