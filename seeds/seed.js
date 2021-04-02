@@ -5,7 +5,8 @@ const seedCharacter = require("");
 
 
 const seedAll = async () => {
-    await sequelize.sync({ force: true })
+    try {
+        await sequelize.sync({ force: true })
     console.log('\n----- DATABASE SYNCED -----\n');
 
     await seedUser();
@@ -15,6 +16,10 @@ const seedAll = async () => {
     console.log('\n----- CHARACTER DATA SYNCED -----\n');
 
     process.exit(0);
+    } catch (err) {
+        return err;
+    }
+    
 
 };
 
