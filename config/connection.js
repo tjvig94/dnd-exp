@@ -6,6 +6,7 @@ let sequelize;
 if (process.env.DATABASE_URL) {
     sequelize = new Sequelize({
       connectionString: process.env.DATABASE_URL,
+      dialect: 'postgres',
       ssl: {
         rejectUnauthorized: false
       }
