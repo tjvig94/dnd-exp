@@ -12,17 +12,17 @@ if (process.env.DATABASE_URL) {
       }
     });
   } else {
-    sequelize = new Sequelize(
-      process.env.DB_NAME,
-      process.env.DB_USER,
-      process.env.DB_PASSWORD,
-      {
-        host: 'localhost',
-        dialect: 'postgres',
-        port: 5432
-      }
-    );
-    
+    return err;
+    // sequelize = new Sequelize(
+    //   process.env.DB_NAME,
+    //   process.env.DB_USER,
+    //   process.env.DB_PASSWORD,
+    //   {
+    //     host: 'localhost',
+    //     dialect: 'postgres',
+    //     port: 5432
+    //   }
+    // );  
   }
 
 module.exports = sequelize;
