@@ -9,16 +9,18 @@ body {
 	font-family: 'Cormorant', sans-serif;
 	line-height: 1.5;
 }
+
 nav {
 	z-index: 2;
 }
+
 a {
 	text-decoration: none;
 	color: var(--primary-color);
 }
 
 h1 {
-	font-weight: 600;
+	font-weight: 550;
 	font-size: 80px;
 	line-height: 1.5;
 	margin-bottom: 25px;
@@ -28,9 +30,11 @@ h1 {
 h4 {
 	font-size: 100px;
 }
+
 .fa-trash-alt {
 	float: right;
 }
+
 .showcase {
 	height: 100vh;
 	display: flex;
@@ -39,6 +43,30 @@ h4 {
 	text-align: center;
 	color: #fff;
 	padding: 0 20px;
+	background-size: cover;
+	margin-bottom: -100px;
+}
+
+.login-page {
+	padding: 40px;
+	text-align: center;
+	background-image: url(../../images/loginbackground.jpg);
+	color: yellow;
+	font-weight: 550;
+	column-width: auto;
+	background-size: cover;
+}
+
+.login-form {
+	min-width: 0;
+	width: auto;
+	display: inline;
+}
+
+.signup-form {
+	min-width: 0;
+	width: auto;
+	display: inline;
 }
 
 .video-container {
@@ -48,17 +76,21 @@ h4 {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	line-height: 0;
 	background: var(--primary-color) url(../../images/firePic.png) no-repeat center center/cover;
+	margin-bottom: -20px;
 }
 
 .video-container video {
-	min-width: 100%;
-	min-height: 100%;
+	width: auto;
+	height: auto;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	object-fit: cover;
+	line-height: 0;
+	margin-bottom: -20px;
 }
 
 .video-container:after {
@@ -95,21 +127,21 @@ h4 {
 }
 
 .characterItem {
-    font-size: 15px;
-    float: left;
-    color: white;
-    background-clip: padding-box;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-    justify-content: center;
-    margin: 5px;
-    padding-top: 20px;
-    width: 18rem;
-    height: 150px;
-    opacity: 75%;
-    font-family: 'Cormorant SC', serif;
+	font-size: 15px;
+	float: left;
+	color: white;
+	background-clip: padding-box;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	text-align: center;
+	justify-content: center;
+	margin: 5px;
+	padding-top: 20px;
+	width: 18rem;
+	height: 150px;
+	opacity: 75%;
+	font-family: 'Cormorant SC', serif;
 }
 
 div.characterItem:hover {
@@ -126,17 +158,19 @@ div.characterItem:active {
 #create {
 	padding: 40px;
 	text-align: center;
-	background-image: url(../../images/dragonart.jpg);
+	background: url(../../images/dragonart.jpg) no-repeat;
 	color: rgb(110, 103, 103);
 	font-weight: 300;
 	column-width: auto;
+	background-size: cover;
 }
 
 #create p {
 	font-size: 1.2rem;
 	max-width: 600px;
 	margin: auto;
-    font-family: 'Cormorant SC', serif;}
+	font-family: 'Cormorant SC', serif;
+}
 
 .btn-primary {
 	background-color: rgb(255, 0, 0);
@@ -158,43 +192,34 @@ div.characterItem:active {
 	color: red;
 	background-color: black;
 }
+
 .btn-primary:visited {
 	background: red;
- }
+}
 
-.char_class:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        background-color: #000000 !important; /* for IE */
-        color: #ffed00 !important;
-    }
+.char_class:hover, select option:focus, select option:active {
+	background-color: #242424 !important;
+	color: #ffffff !important;
+}
 
-   .char_class:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        background-color: #d6d6d6 !important; /* for IE */
-        color: #000000 !important;
-    }
+.char_class:checked {
+	background-color: #242424!important;
+	color: #ffffff !important;
+}
 
-	 .char_race:hover,
-    select option:focus,
-    select option:active {
-        background: linear-gradient(#000000, #000000);
-        background-color: #000000 !important; /* for IE */
-        color: #ffed00 !important;
-    }
+.char_race:hover, select option:focus, select option:active {
+	background-color: #242424 !important;
+	color: #ffffff !important;
+}
 
-   .char_race:checked {
-        background: linear-gradient(#d6d6d6, #d6d6d6);
-        background-color: #d6d6d6 !important; /* for IE */
-        color: #000000 !important;
-    }
-	 
+.char_race:checked {
+	background-color: #242424 !important;
+	color: #242424 !important;
+}
 
-	
-	@media (max-width: 767px) {
-		.video-container {
-			background: url('../../images/dragonart.jpg');
-			background-size: cover;
-		}
+@media (max-width: 767px) {
+	.video-container {
+		background: url('../../images/dragonart.jpg');
+		background-size: cover;
 	}
+}
