@@ -3,8 +3,14 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
-    sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (process.env.DATABASE_URL) {
+    sequelize = new Sequelize({
+      dialect: 'postgres',
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    });
   } else {
     sequelize = new Sequelize(
       process.env.DB_NAME,
@@ -15,7 +21,7 @@ if (process.env.JAWSDB_URL) {
         dialect: 'postgres',
         port: 5432
       }
-    );
+    );  
   }
 
 module.exports = sequelize;
