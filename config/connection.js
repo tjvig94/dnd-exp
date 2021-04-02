@@ -22,6 +22,7 @@ if (process.env.DATABASE_URL) {
         port: 5432
       }
     );
+    
   }
 
 module.exports = sequelize;
