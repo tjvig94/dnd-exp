@@ -40,36 +40,5 @@ const loginFormHandler = async (event) => {
   
 
 
-  if (email && password) {
-    // Send a POST request to the API endpoint
-    const response = await $.post('/api/users/login', { email, password });
-    document.location.replace('/');
-  }
-};
 
-//wrap in a try catch
-const signupFormHandler = async (event) => {
-  event.preventDefault();
-  try {
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-
-    if (name && email && password) {
-      const response = await $.post('/api/users/register', { name, email, password });
-      (response) ? document.location.replace('/') : alert("Server Error. Sorry!");
-    }
-  } catch (err) {
-    res.status(400).json(err);
-  }
-};
-// 
-
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
-
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
 
