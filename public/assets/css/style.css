@@ -55,6 +55,8 @@ h4 {
 	font-weight: 550;
 	column-width: auto;
 	background-size: cover;
+	border: 20px solid rgb(0, 0, 0);
+	
 }
 
 .login-form {
