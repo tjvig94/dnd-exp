@@ -36,7 +36,10 @@ Have you ever needed to make a Dungeons and Dragons character on the fly? Well l
 * [ESlint](https://eslint.org/)
 * [Bcrypt](https://www.npmjs.com/package/bcrypt)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Multiple.js](https://multiple.js.org/)
 * [Handlebars](https://handlebarsjs.com/)
+* [BootStrap](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com/)
 * [PostgresSQL](https://www.postgresql.org/)
 * [Sequelize](https://sequelize.org/)
 
