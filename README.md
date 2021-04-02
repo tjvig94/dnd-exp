@@ -26,8 +26,13 @@ Have you ever needed to make a Dungeons and Dragons character on the fly? Well l
 
 ## Features 
 
-![image of app](image file path)
-![image of app](image file path)
+![image of app](public/images/characterStats.png)
+Once you have selected the proper fields to create your character an easy to read and understand stat page is generated. Hovering over a certain stat/trait will generate a small text box describing the individual stat or trait. This makes for easy understanding to even the most beginner player. 
+
+
+![image of app](public/images/characters.png)
+Want to create more than one character? Not a problem! An easy to view page allows the user to see all the characters they have created. A simple click will send you right to that characters stats page. 
+
 
 ## Technologies
 * [Node.js](https://nodejs.org/en/)
