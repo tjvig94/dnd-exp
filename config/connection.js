@@ -6,23 +6,19 @@ let sequelize;
 if (process.env.DATABASE_URL) {
     sequelize = new Sequelize({
       dialect: 'postgres',
-      connectionString: process.env.DATABASE_URL, 
-      ssl: {
-        rejectUnauthorized: false
-      }
+      connectionString: process.env.DATABASE_URL
     });
   } else {
-    return err;
-    // sequelize = new Sequelize(
-    //   process.env.DB_NAME,
-    //   process.env.DB_USER,
-    //   process.env.DB_PASSWORD,
-    //   {
-    //     host: 'localhost',
-    //     dialect: 'postgres',
-    //     port: 5432
-    //   }
-    // );  
+    sequelize = new Sequelize(
+      process.env.DB_NAME,
+      process.env.DB_USER,
+      process.env.DB_PASSWORD,
+      {
+        host: 'localhost',
+        dialect: 'postgres',
+        port: 5432
+      }
+    );  
   }
 
 module.exports = sequelize;
