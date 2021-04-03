@@ -48,14 +48,13 @@ h4 {
 }
 
 .login-page {
-	padding: 40px;
 	text-align: center;
 	background-image: url(../../images/loginbackground.jpg);
 	color: yellow;
 	font-weight: 550;
 	column-width: auto;
 	background-size: cover;
-	border: 70px solid rgb(0, 0, 0);
+	/* border: 70px solid rgb(0, 0, 0); */
 	
 }
 
