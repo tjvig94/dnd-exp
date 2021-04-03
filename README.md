@@ -22,7 +22,7 @@
 * [License](#License)
 
 ## Purpose
-Have you ever needed to make a Dungeons and Dragons character on the fly? Well look no further! More Text...
+Have you ever needed to make a Dungeons and Dragons character on the fly? Well look no further! Making a new character to play with can take quite a bit of time and who has time to waste when you just want to play. This app allows users to easily create new characters fast with generated stats that would meet all the criteria needed to start or jump into a campaign!
 
 ## Features 
 
@@ -50,6 +50,12 @@ Want to create more than one character? Not a problem! An easy to view page allo
 
 
 ## Instructions
+1. Register for an account or sign in to an existing account. 
+2. Simply click Create Character.
+3. Select a race, class and enter in a characters name then click generate. 
+4. View your characters stats and traits.
+5. View previously made characters by clicking "My Characters" located in the navigation bar at the top of the page. 
+6. Dont leave your account running for everyone to see and make sure to logout. 
 
 
 ## Contributors
