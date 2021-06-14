@@ -5,7 +5,7 @@
 ![image of app](public/assets/images/login-Img.png)
 
 ## Visit the Webpage
- [Dungeons and Dragons Character Creator Express](https://character-creator-express.herokuapp.com/login)
+ [Dungeons and Dragons Character Creator Express](http://dnd-exp.herokuapp.com/login)
 
 ## Table of Contents
 
